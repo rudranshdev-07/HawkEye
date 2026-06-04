@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_91809f3fd3cdba69a645523c3b26c65b {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_91809f3fd3cdba69a645523c3b26c65b" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_91809f3fd3cdba69a645523c3b26c65b = L.map(
+                "map_91809f3fd3cdba69a645523c3b26c65b",
+                {
+                    center: [41.87129154376927, -87.64602913706915],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+  "name": "Dark Mode",
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_111689f5ff69f11dda2f94dfabb15194 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_111689f5ff69f11dda2f94dfabb15194.addTo(map_91809f3fd3cdba69a645523c3b26c65b);
+        
+    
+            var tile_layer_27f6b316c1a7d25c6a5fdab8a3fd7454 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_27f6b316c1a7d25c6a5fdab8a3fd7454.addTo(map_91809f3fd3cdba69a645523c3b26c65b);
+        
+    
+            var tile_layer_73aa064854a28c9cd2330dea8b7cf82c = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_73aa064854a28c9cd2330dea8b7cf82c.addTo(map_91809f3fd3cdba69a645523c3b26c65b);
+        
+    
+            var feature_group_e32e175acb080d9e5f4f4848ece4cd72 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_16f1a9f27de2fb6bf17d25a2f8f18f8b = L.circle(
+                [41.87525, -87.62804],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 150.0, "stroke": true, "weight": 3}
+            ).addTo(feature_group_e32e175acb080d9e5f4f4848ece4cd72);
+        
+    
+        var popup_a3405892d01bf55b42c5cd7ba9a54e71 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_dd542d171ce0354f96614d4aa37e4a89 = $(`<div id="html_dd542d171ce0354f96614d4aa37e4a89" style="width: 100.0%; height: 100.0%;">         <div style="font-family: sans-serif; font-size: 13px; color: #1a1a1e; width: 240px;">             <h4 style="margin: 0 0 8px 0; color: #ff0000; text-transform: uppercase;">Hotspot Rank #1</h4>             <table style="width: 100%; border-collapse: collapse;">                 <tr><td style="padding: 2px 0;"><b>Incidents:</b></td><td style="text-align: right;">100 (2.04%)</td></tr>                 <tr><td style="padding: 2px 0;"><b>Centroid:</b></td><td style="text-align: right; font-size: 11px;">41.8753, -87.6280</td></tr>                 <tr><td style="padding: 2px 0;"><b>Arrest Rate:</b></td><td style="text-align: right;">21.0%</td></tr>                 <tr><td style="padding: 2px 0;"><b>Domestic Rate:</b></td><td style="text-align: right;">9.0%</td></tr>             </table>             <div style="margin-top: 8px; border-top: 1px solid #ddd; padding-top: 6px;">                 <b>Top Offenses:</b><br/>                 <span style="font-size: 11px; color: #555;">ROBBERY (18), MOTOR VEHICLE THEFT (16), ASSAULT (16)</span>             </div>         </div>         </div>`)[0];
+                popup_a3405892d01bf55b42c5cd7ba9a54e71.setContent(html_dd542d171ce0354f96614d4aa37e4a89);
+            
+        
+
+        circle_16f1a9f27de2fb6bf17d25a2f8f18f8b.bindPopup(popup_a3405892d01bf55b42c5cd7ba9a54e71)
+        ;
+
+        
+    
+    
+            circle_16f1a9f27de2fb6bf17d25a2f8f18f8b.bindTooltip(
+                `<div>
+                     Rank #1: 100 Incidents
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_7d7b6978b430d91107cc88bafc775264 = L.marker(
+                [41.87525, -87.62804],
+                {
+}
+            ).addTo(feature_group_e32e175acb080d9e5f4f4848ece4cd72);
+        
+    
+            var div_icon_dffa1940d4de890d4a6a4c9e4ca45140 = L.divIcon({
+  "html": "\u003cdiv style=\"font-family: sans-serif; color: white; background-color: #ff0000; \n                      border-radius: 50%; width: 24px; height: 24px; line-height: 24px; text-align: center; \n                      font-weight: bold; border: 2px solid white; font-size: 11px; transform: translate(-12px, -12px);\"\u003e\n                      1\n                      \u003c/div\u003e",
+  "className": "empty",
+});
+        
+    
+                marker_7d7b6978b430d91107cc88bafc775264.setIcon(div_icon_dffa1940d4de890d4a6a4c9e4ca45140);
+            
+    
+            var circle_0338ae51f9b793594c6c68452ac0ea20 = L.circle(
+                [41.88526, -87.62862],
+                {"bubblingMouseEvents": true, "color": "#ff4500", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff4500", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 148.5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_e32e175acb080d9e5f4f4848ece4cd72);
+        
+    
+        var popup_0c7a20d8381fb861c42fbdd41da4a1a2 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_530cbeff590037772279a08fe68de4ac = $(`<div id="html_530cbeff590037772279a08fe68de4ac" style="width: 100.0%; height: 100.0%;">         <div style="font-family: sans-serif; font-size: 13px; color: #1a1a1e; width: 240px;">             <h4 style="margin: 0 0 8px 0; color: #ff4500; text-transform: uppercase;">Hotspot Rank #2</h4>             <table style="width: 100%; border-collapse: collapse;">                 <tr><td style="padding: 2px 0;"><b>Incidents:</b></td><td style="text-align: right;">99 (2.02%)</td></tr>                 <tr><td style="padding: 2px 0;"><b>Centroid:</b></td><td style="text-align: right; font-size: 11px;">41.8853, -87.6286</td></tr>                 <tr><td style="padding: 2px 0;"><b>Arrest Rate:</b></td><td style="text-align: right;">37.37%</td></tr>                 <tr><td style="padding: 2px 0;"><b>Domestic Rate:</b></td><td style="text-align: right;">18.18%</td></tr>             </table>             <div style="margin-top: 8px; border-top: 1px solid #ddd; padding-top: 6px;">                 <b>Top Offenses:</b><br/>                 <span style="font-size: 11px; color: #555;">ASSAULT (14), NARCOTICS (14), THEFT (14)</span>             </div>         </div>         </div>`)[0];
+                popup_0c7a20d8381fb861c42fbdd41da4a1a2.setContent(html_530cbeff590037772279a08fe68de4ac);
+            
+        
+
+        circle_0338ae51f9b793594c6c68452ac0ea20.bindPopup(popup_0c7a20d8381fb861c42fbdd41da4a1a2)
+        ;
+
+        
+    
+    
+            circle_0338ae51f9b793594c6c68452ac0ea20.bindTooltip(
+                `<div>
+                     Rank #2: 99 Incidents
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_f0319e58f825cf8b551a0fe7df8931da = L.marker(
+                [41.88526, -87.62862],
+                {
+}
+            ).addTo(feature_group_e32e175acb080d9e5f4f4848ece4cd72);
+        
+    
+            var div_icon_e7feb672d2a60a1216db9d03aff8e876 = L.divIcon({
+  "html": "\u003cdiv style=\"font-family: sans-serif; color: white; background-color: #ff4500; \n                      border-radius: 50%; width: 24px; height: 24px; line-height: 24px; text-align: center; \n                      font-weight: bold; border: 2px solid white; font-size: 11px; transform: translate(-12px, -12px);\"\u003e\n                      2\n                      \u003c/div\u003e",
+  "className": "empty",
+});
+        
+    
+                marker_f0319e58f825cf8b551a0fe7df8931da.setIcon(div_icon_e7feb672d2a60a1216db9d03aff8e876);
+            
+    
+            var circle_65ce17610c7dff62cdaf064256eb5e6f = L.circle(
+                [41.88544, -87.63629],
+                {"bubblingMouseEvents": true, "color": "#ff8c00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff8c00", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 144.0, "stroke": true, "weight": 3}
+            ).addTo(feature_group_e32e175acb080d9e5f4f4848ece4cd72);
+        
+    
+        var popup_4553bb901a18855020e4aa28c9509886 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_f6574ba39d4be5382544fc99fe37742b = $(`<div id="html_f6574ba39d4be5382544fc99fe37742b" style="width: 100.0%; height: 100.0%;">         <div style="font-family: sans-serif; font-size: 13px; color: #1a1a1e; width: 240px;">             <h4 style="margin: 0 0 8px 0; color: #ff8c00; text-transform: uppercase;">Hotspot Rank #3</h4>             <table style="width: 100%; border-collapse: collapse;">                 <tr><td style="padding: 2px 0;"><b>Incidents:</b></td><td style="text-align: right;">96 (1.96%)</td></tr>                 <tr><td style="padding: 2px 0;"><b>Centroid:</b></td><td style="text-align: right; font-size: 11px;">41.8854, -87.6363</td></tr>                 <tr><td style="padding: 2px 0;"><b>Arrest Rate:</b></td><td style="text-align: right;">35.42%</td></tr>                 <tr><td style="padding: 2px 0;"><b>Domestic Rate:</b></td><td style="text-align: right;">10.42%</td></tr>             </table>             <div style="margin-top: 8px; border-top: 1px solid #ddd; padding-top: 6px;">                 <b>Top Offenses:</b><br/>                 <span style="font-size: 11px; color: #555;">NARCOTICS (16), CRIMINAL DAMAGE (15), BURGLARY (13)</span>             </div>         </div>         </div>`)[0];
+                popup_4553bb901a18855020e4aa28c9509886.setContent(html_f6574ba39d4be5382544fc99fe37742b);
+            
+        
+
+        circle_65ce17610c7dff62cdaf064256eb5e6f.bindPopup(popup_4553bb901a18855020e4aa28c9509886)
+        ;
+
+        
+    
+    
+            circle_65ce17610c7dff62cdaf064256eb5e6f.bindTooltip(
+                `<div>
+                     Rank #3: 96 Incidents
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_32fce1c62b158a3cb317e4170b0d0b82 = L.marker(
+                [41.88544, -87.63629],
+                {
+}
+            ).addTo(feature_group_e32e175acb080d9e5f4f4848ece4cd72);
+        
+    
+            var div_icon_e2b70ac6e3a1374bc8789deccb4ccc79 = L.divIcon({
+  "html": "\u003cdiv style=\"font-family: sans-serif; color: white; background-color: #ff8c00; \n                      border-radius: 50%; width: 24px; height: 24px; line-height: 24px; text-align: center; \n                      font-weight: bold; border: 2px solid white; font-size: 11px; transform: translate(-12px, -12px);\"\u003e\n                      3\n                      \u003c/div\u003e",
+  "className": "empty",
+});
+        
+    
+                marker_32fce1c62b158a3cb317e4170b0d0b82.setIcon(div_icon_e2b70ac6e3a1374bc8789deccb4ccc79);
+            
+    
+            var circle_51f467607b3d56287ecb4c27c86320bb = L.circle(
+                [41.87558, -87.63571],
+                {"bubblingMouseEvents": true, "color": "#ffa500", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffa500", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 133.5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_e32e175acb080d9e5f4f4848ece4cd72);
+        
+    
+        var popup_78fb8a72fd95ca2fb3791d4bca583a78 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_36383171ee1fbb858cb4facbef6bd1c7 = $(`<div id="html_36383171ee1fbb858cb4facbef6bd1c7" style="width: 100.0%; height: 100.0%;">         <div style="font-family: sans-serif; font-size: 13px; color: #1a1a1e; width: 240px;">             <h4 style="margin: 0 0 8px 0; color: #ffa500; text-transform: uppercase;">Hotspot Rank #4</h4>             <table style="width: 100%; border-collapse: collapse;">                 <tr><td style="padding: 2px 0;"><b>Incidents:</b></td><td style="text-align: right;">89 (1.82%)</td></tr>                 <tr><td style="padding: 2px 0;"><b>Centroid:</b></td><td style="text-align: right; font-size: 11px;">41.8756, -87.6357</td></tr>                 <tr><td style="padding: 2px 0;"><b>Arrest Rate:</b></td><td style="text-align: right;">30.34%</td></tr>                 <tr><td style="padding: 2px 0;"><b>Domestic Rate:</b></td><td style="text-align: right;">13.48%</td></tr>             </table>             <div style="margin-top: 8px; border-top: 1px solid #ddd; padding-top: 6px;">                 <b>Top Offenses:</b><br/>                 <span style="font-size: 11px; color: #555;">ROBBERY (20), MOTOR VEHICLE THEFT (15), BATTERY (11)</span>             </div>         </div>         </div>`)[0];
+                popup_78fb8a72fd95ca2fb3791d4bca583a78.setContent(html_36383171ee1fbb858cb4facbef6bd1c7);
+            
+        
+
+        circle_51f467607b3d56287ecb4c27c86320bb.bindPopup(popup_78fb8a72fd95ca2fb3791d4bca583a78)
+        ;
+
+        
+    
+    
+            circle_51f467607b3d56287ecb4c27c86320bb.bindTooltip(
+                `<div>
+                     Rank #4: 89 Incidents
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_93c3cdd96b63b0f137032dc47a47fbaf = L.marker(
+                [41.87558, -87.63571],
+                {
+}
+            ).addTo(feature_group_e32e175acb080d9e5f4f4848ece4cd72);
+        
+    
+            var div_icon_7f70ad5fe98b3869d011111d86358809 = L.divIcon({
+  "html": "\u003cdiv style=\"font-family: sans-serif; color: white; background-color: #ffa500; \n                      border-radius: 50%; width: 24px; height: 24px; line-height: 24px; text-align: center; \n                      font-weight: bold; border: 2px solid white; font-size: 11px; transform: translate(-12px, -12px);\"\u003e\n                      4\n                      \u003c/div\u003e",
+  "className": "empty",
+});
+        
+    
+                marker_93c3cdd96b63b0f137032dc47a47fbaf.setIcon(div_icon_7f70ad5fe98b3869d011111d86358809);
+            
+    
+            var circle_24f2e939e0a2fc344dcee37bbdbce3ba = L.circle(
+                [41.86565, -87.62082],
+                {"bubblingMouseEvents": true, "color": "#ffbe00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffbe00", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 130.5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_e32e175acb080d9e5f4f4848ece4cd72);
+        
+    
+        var popup_5a8b299ea590605fa9372224490e0cff = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_2c89c0a87a98024c8704fbac977eb4df = $(`<div id="html_2c89c0a87a98024c8704fbac977eb4df" style="width: 100.0%; height: 100.0%;">         <div style="font-family: sans-serif; font-size: 13px; color: #1a1a1e; width: 240px;">             <h4 style="margin: 0 0 8px 0; color: #ffbe00; text-transform: uppercase;">Hotspot Rank #5</h4>             <table style="width: 100%; border-collapse: collapse;">                 <tr><td style="padding: 2px 0;"><b>Incidents:</b></td><td style="text-align: right;">87 (1.77%)</td></tr>                 <tr><td style="padding: 2px 0;"><b>Centroid:</b></td><td style="text-align: right; font-size: 11px;">41.8657, -87.6208</td></tr>                 <tr><td style="padding: 2px 0;"><b>Arrest Rate:</b></td><td style="text-align: right;">36.78%</td></tr>                 <tr><td style="padding: 2px 0;"><b>Domestic Rate:</b></td><td style="text-align: right;">13.79%</td></tr>             </table>             <div style="margin-top: 8px; border-top: 1px solid #ddd; padding-top: 6px;">                 <b>Top Offenses:</b><br/>                 <span style="font-size: 11px; color: #555;">CRIMINAL DAMAGE (13), NARCOTICS (13), MOTOR VEHICLE THEFT (12)</span>             </div>         </div>         </div>`)[0];
+                popup_5a8b299ea590605fa9372224490e0cff.setContent(html_2c89c0a87a98024c8704fbac977eb4df);
+            
+        
+
+        circle_24f2e939e0a2fc344dcee37bbdbce3ba.bindPopup(popup_5a8b299ea590605fa9372224490e0cff)
+        ;
+
+        
+    
+    
+            circle_24f2e939e0a2fc344dcee37bbdbce3ba.bindTooltip(
+                `<div>
+                     Rank #5: 87 Incidents
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_19878794161ca8841c9dde481069e479 = L.marker(
+                [41.86565, -87.62082],
+                {
+}
+            ).addTo(feature_group_e32e175acb080d9e5f4f4848ece4cd72);
+        
+    
+            var div_icon_e6266bccb35bc2d7b27447aa16517a32 = L.divIcon({
+  "html": "\u003cdiv style=\"font-family: sans-serif; color: white; background-color: #ffbe00; \n                      border-radius: 50%; width: 24px; height: 24px; line-height: 24px; text-align: center; \n                      font-weight: bold; border: 2px solid white; font-size: 11px; transform: translate(-12px, -12px);\"\u003e\n                      5\n                      \u003c/div\u003e",
+  "className": "empty",
+});
+        
+    
+                marker_19878794161ca8841c9dde481069e479.setIcon(div_icon_e6266bccb35bc2d7b27447aa16517a32);
+            
+    
+            var circle_abe459515e35f8a3ae76e5e4a4e17286 = L.circle(
+                [41.87544, -87.62105],
+                {"bubblingMouseEvents": true, "color": "#ffd700", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffd700", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 121.5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_e32e175acb080d9e5f4f4848ece4cd72);
+        
+    
+        var popup_0b2fbe4ce1422171aeb151b76caf224c = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_46953b62bc225c06931676fa9aee5d5e = $(`<div id="html_46953b62bc225c06931676fa9aee5d5e" style="width: 100.0%; height: 100.0%;">         <div style="font-family: sans-serif; font-size: 13px; color: #1a1a1e; width: 240px;">             <h4 style="margin: 0 0 8px 0; color: #ffd700; text-transform: uppercase;">Hotspot Rank #6</h4>             <table style="width: 100%; border-collapse: collapse;">                 <tr><td style="padding: 2px 0;"><b>Incidents:</b></td><td style="text-align: right;">81 (1.65%)</td></tr>                 <tr><td style="padding: 2px 0;"><b>Centroid:</b></td><td style="text-align: right; font-size: 11px;">41.8754, -87.6210</td></tr>                 <tr><td style="padding: 2px 0;"><b>Arrest Rate:</b></td><td style="text-align: right;">40.74%</td></tr>                 <tr><td style="padding: 2px 0;"><b>Domestic Rate:</b></td><td style="text-align: right;">7.41%</td></tr>             </table>             <div style="margin-top: 8px; border-top: 1px solid #ddd; padding-top: 6px;">                 <b>Top Offenses:</b><br/>                 <span style="font-size: 11px; color: #555;">ROBBERY (16), ASSAULT (14), THEFT (12)</span>             </div>         </div>         </div>`)[0];
+                popup_0b2fbe4ce1422171aeb151b76caf224c.setContent(html_46953b62bc225c06931676fa9aee5d5e);
+            
+        
+
+        circle_abe459515e35f8a3ae76e5e4a4e17286.bindPopup(popup_0b2fbe4ce1422171aeb151b76caf224c)
+        ;
+
+        
+    
+    
+            circle_abe459515e35f8a3ae76e5e4a4e17286.bindTooltip(
+                `<div>
+                     Rank #6: 81 Incidents
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_a3938c3740d9ed08e8f8a95f47178d59 = L.marker(
+                [41.87544, -87.62105],
+                {
+}
+            ).addTo(feature_group_e32e175acb080d9e5f4f4848ece4cd72);
+        
+    
+            var div_icon_34233cb9475f191f6d50188894cfa6e6 = L.divIcon({
+  "html": "\u003cdiv style=\"font-family: sans-serif; color: white; background-color: #ffd700; \n                      border-radius: 50%; width: 24px; height: 24px; line-height: 24px; text-align: center; \n                      font-weight: bold; border: 2px solid white; font-size: 11px; transform: translate(-12px, -12px);\"\u003e\n                      6\n                      \u003c/div\u003e",
+  "className": "empty",
+});
+        
+    
+                marker_a3938c3740d9ed08e8f8a95f47178d59.setIcon(div_icon_34233cb9475f191f6d50188894cfa6e6);
+            
+    
+            var circle_8d42fe652d05108928b623cb41a7eca5 = L.circle(
+                [41.86599, -87.63662],
+                {"bubblingMouseEvents": true, "color": "#e6e600", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e6e600", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 121.5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_e32e175acb080d9e5f4f4848ece4cd72);
+        
+    
+        var popup_76dcfea27c1a8fe64265604072fa7895 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_d3533a55a10fddd28f7a4dc9ee96e67b = $(`<div id="html_d3533a55a10fddd28f7a4dc9ee96e67b" style="width: 100.0%; height: 100.0%;">         <div style="font-family: sans-serif; font-size: 13px; color: #1a1a1e; width: 240px;">             <h4 style="margin: 0 0 8px 0; color: #e6e600; text-transform: uppercase;">Hotspot Rank #7</h4>             <table style="width: 100%; border-collapse: collapse;">                 <tr><td style="padding: 2px 0;"><b>Incidents:</b></td><td style="text-align: right;">81 (1.65%)</td></tr>                 <tr><td style="padding: 2px 0;"><b>Centroid:</b></td><td style="text-align: right; font-size: 11px;">41.8660, -87.6366</td></tr>                 <tr><td style="padding: 2px 0;"><b>Arrest Rate:</b></td><td style="text-align: right;">25.93%</td></tr>                 <tr><td style="padding: 2px 0;"><b>Domestic Rate:</b></td><td style="text-align: right;">17.28%</td></tr>             </table>             <div style="margin-top: 8px; border-top: 1px solid #ddd; padding-top: 6px;">                 <b>Top Offenses:</b><br/>                 <span style="font-size: 11px; color: #555;">BURGLARY (16), MOTOR VEHICLE THEFT (14), ASSAULT (13)</span>             </div>         </div>         </div>`)[0];
+                popup_76dcfea27c1a8fe64265604072fa7895.setContent(html_d3533a55a10fddd28f7a4dc9ee96e67b);
+            
+        
+
+        circle_8d42fe652d05108928b623cb41a7eca5.bindPopup(popup_76dcfea27c1a8fe64265604072fa7895)
+        ;
+
+        
+    
+    
+            circle_8d42fe652d05108928b623cb41a7eca5.bindTooltip(
+                `<div>
+                     Rank #7: 81 Incidents
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_905a595202adfac25c4ffa4406e6760c = L.marker(
+                [41.86599, -87.63662],
+                {
+}
+            ).addTo(feature_group_e32e175acb080d9e5f4f4848ece4cd72);
+        
+    
+            var div_icon_fbf27a3169f908ca0a1b855016054843 = L.divIcon({
+  "html": "\u003cdiv style=\"font-family: sans-serif; color: white; background-color: #e6e600; \n                      border-radius: 50%; width: 24px; height: 24px; line-height: 24px; text-align: center; \n                      font-weight: bold; border: 2px solid white; font-size: 11px; transform: translate(-12px, -12px);\"\u003e\n                      7\n                      \u003c/div\u003e",
+  "className": "empty",
+});
+        
+    
+                marker_905a595202adfac25c4ffa4406e6760c.setIcon(div_icon_fbf27a3169f908ca0a1b855016054843);
+            
+    
+            var circle_a5428edd5d467555fe5042dcb97c662c = L.circle(
+                [41.88576, -87.62067],
+                {"bubblingMouseEvents": true, "color": "#c8e600", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c8e600", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 115.5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_e32e175acb080d9e5f4f4848ece4cd72);
+        
+    
+        var popup_6a4eab4b1353f2b19bcec27cb1f086c6 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_a91b3eaa5e2c0a9e842e5101d71b3e80 = $(`<div id="html_a91b3eaa5e2c0a9e842e5101d71b3e80" style="width: 100.0%; height: 100.0%;">         <div style="font-family: sans-serif; font-size: 13px; color: #1a1a1e; width: 240px;">             <h4 style="margin: 0 0 8px 0; color: #c8e600; text-transform: uppercase;">Hotspot Rank #8</h4>             <table style="width: 100%; border-collapse: collapse;">                 <tr><td style="padding: 2px 0;"><b>Incidents:</b></td><td style="text-align: right;">77 (1.57%)</td></tr>                 <tr><td style="padding: 2px 0;"><b>Centroid:</b></td><td style="text-align: right; font-size: 11px;">41.8858, -87.6207</td></tr>                 <tr><td style="padding: 2px 0;"><b>Arrest Rate:</b></td><td style="text-align: right;">20.78%</td></tr>                 <tr><td style="padding: 2px 0;"><b>Domestic Rate:</b></td><td style="text-align: right;">14.29%</td></tr>             </table>             <div style="margin-top: 8px; border-top: 1px solid #ddd; padding-top: 6px;">                 <b>Top Offenses:</b><br/>                 <span style="font-size: 11px; color: #555;">THEFT (13), BATTERY (12), ROBBERY (11)</span>             </div>         </div>         </div>`)[0];
+                popup_6a4eab4b1353f2b19bcec27cb1f086c6.setContent(html_a91b3eaa5e2c0a9e842e5101d71b3e80);
+            
+        
+
+        circle_a5428edd5d467555fe5042dcb97c662c.bindPopup(popup_6a4eab4b1353f2b19bcec27cb1f086c6)
+        ;
+
+        
+    
+    
+            circle_a5428edd5d467555fe5042dcb97c662c.bindTooltip(
+                `<div>
+                     Rank #8: 77 Incidents
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_5964ec0824a52feeee519ee729d8505d = L.marker(
+                [41.88576, -87.62067],
+                {
+}
+            ).addTo(feature_group_e32e175acb080d9e5f4f4848ece4cd72);
+        
+    
+            var div_icon_52f4dbfde021ebea71d4330cdd772a83 = L.divIcon({
+  "html": "\u003cdiv style=\"font-family: sans-serif; color: white; background-color: #c8e600; \n                      border-radius: 50%; width: 24px; height: 24px; line-height: 24px; text-align: center; \n                      font-weight: bold; border: 2px solid white; font-size: 11px; transform: translate(-12px, -12px);\"\u003e\n                      8\n                      \u003c/div\u003e",
+  "className": "empty",
+});
+        
+    
+                marker_5964ec0824a52feeee519ee729d8505d.setIcon(div_icon_52f4dbfde021ebea71d4330cdd772a83);
+            
+    
+            var circle_af80bad974025c32ad8a6ad0c29869f1 = L.circle(
+                [41.8855, -87.64399],
+                {"bubblingMouseEvents": true, "color": "#aae600", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#aae600", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 112.5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_e32e175acb080d9e5f4f4848ece4cd72);
+        
+    
+        var popup_737ac319c1ae1ae0334a010a444430ba = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_2d15207bbb66caeb3b766842683d0598 = $(`<div id="html_2d15207bbb66caeb3b766842683d0598" style="width: 100.0%; height: 100.0%;">         <div style="font-family: sans-serif; font-size: 13px; color: #1a1a1e; width: 240px;">             <h4 style="margin: 0 0 8px 0; color: #aae600; text-transform: uppercase;">Hotspot Rank #9</h4>             <table style="width: 100%; border-collapse: collapse;">                 <tr><td style="padding: 2px 0;"><b>Incidents:</b></td><td style="text-align: right;">75 (1.53%)</td></tr>                 <tr><td style="padding: 2px 0;"><b>Centroid:</b></td><td style="text-align: right; font-size: 11px;">41.8855, -87.6440</td></tr>                 <tr><td style="padding: 2px 0;"><b>Arrest Rate:</b></td><td style="text-align: right;">32.0%</td></tr>                 <tr><td style="padding: 2px 0;"><b>Domestic Rate:</b></td><td style="text-align: right;">8.0%</td></tr>             </table>             <div style="margin-top: 8px; border-top: 1px solid #ddd; padding-top: 6px;">                 <b>Top Offenses:</b><br/>                 <span style="font-size: 11px; color: #555;">BATTERY (13), NARCOTICS (12), ROBBERY (12)</span>             </div>         </div>         </div>`)[0];
+                popup_737ac319c1ae1ae0334a010a444430ba.setContent(html_2d15207bbb66caeb3b766842683d0598);
+            
+        
+
+        circle_af80bad974025c32ad8a6ad0c29869f1.bindPopup(popup_737ac319c1ae1ae0334a010a444430ba)
+        ;
+
+        
+    
+    
+            circle_af80bad974025c32ad8a6ad0c29869f1.bindTooltip(
+                `<div>
+                     Rank #9: 75 Incidents
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_0bea80f85d3231314a9dc7d1cb24bcdb = L.marker(
+                [41.8855, -87.64399],
+                {
+}
+            ).addTo(feature_group_e32e175acb080d9e5f4f4848ece4cd72);
+        
+    
+            var div_icon_007ad111d2c2d189491051ba8e70e064 = L.divIcon({
+  "html": "\u003cdiv style=\"font-family: sans-serif; color: white; background-color: #aae600; \n                      border-radius: 50%; width: 24px; height: 24px; line-height: 24px; text-align: center; \n                      font-weight: bold; border: 2px solid white; font-size: 11px; transform: translate(-12px, -12px);\"\u003e\n                      9\n                      \u003c/div\u003e",
+  "className": "empty",
+});
+        
+    
+                marker_0bea80f85d3231314a9dc7d1cb24bcdb.setIcon(div_icon_007ad111d2c2d189491051ba8e70e064);
+            
+    
+            var circle_8b2816781011c4046db92aa25cebf45f = L.circle(
+                [41.87519, -87.61229],
+                {"bubblingMouseEvents": true, "color": "#8ce600", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#8ce600", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 100.5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_e32e175acb080d9e5f4f4848ece4cd72);
+        
+    
+        var popup_7b87cde9d9b80f1a02757c7d9659247a = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_8bcfbd016185255e8b0cf336baf5cbbf = $(`<div id="html_8bcfbd016185255e8b0cf336baf5cbbf" style="width: 100.0%; height: 100.0%;">         <div style="font-family: sans-serif; font-size: 13px; color: #1a1a1e; width: 240px;">             <h4 style="margin: 0 0 8px 0; color: #8ce600; text-transform: uppercase;">Hotspot Rank #10</h4>             <table style="width: 100%; border-collapse: collapse;">                 <tr><td style="padding: 2px 0;"><b>Incidents:</b></td><td style="text-align: right;">67 (1.37%)</td></tr>                 <tr><td style="padding: 2px 0;"><b>Centroid:</b></td><td style="text-align: right; font-size: 11px;">41.8752, -87.6123</td></tr>                 <tr><td style="padding: 2px 0;"><b>Arrest Rate:</b></td><td style="text-align: right;">28.36%</td></tr>                 <tr><td style="padding: 2px 0;"><b>Domestic Rate:</b></td><td style="text-align: right;">13.43%</td></tr>             </table>             <div style="margin-top: 8px; border-top: 1px solid #ddd; padding-top: 6px;">                 <b>Top Offenses:</b><br/>                 <span style="font-size: 11px; color: #555;">MOTOR VEHICLE THEFT (12), THEFT (11), ROBBERY (9)</span>             </div>         </div>         </div>`)[0];
+                popup_7b87cde9d9b80f1a02757c7d9659247a.setContent(html_8bcfbd016185255e8b0cf336baf5cbbf);
+            
+        
+
+        circle_8b2816781011c4046db92aa25cebf45f.bindPopup(popup_7b87cde9d9b80f1a02757c7d9659247a)
+        ;
+
+        
+    
+    
+            circle_8b2816781011c4046db92aa25cebf45f.bindTooltip(
+                `<div>
+                     Rank #10: 67 Incidents
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_105a234f98c823bb22edb04dc02a7a0c = L.marker(
+                [41.87519, -87.61229],
+                {
+}
+            ).addTo(feature_group_e32e175acb080d9e5f4f4848ece4cd72);
+        
+    
+            var div_icon_8a1ba524df6646d24428c1f8e0f3f659 = L.divIcon({
+  "html": "\u003cdiv style=\"font-family: sans-serif; color: white; background-color: #8ce600; \n                      border-radius: 50%; width: 24px; height: 24px; line-height: 24px; text-align: center; \n                      font-weight: bold; border: 2px solid white; font-size: 11px; transform: translate(-12px, -12px);\"\u003e\n                      10\n                      \u003c/div\u003e",
+  "className": "empty",
+});
+        
+    
+                marker_105a234f98c823bb22edb04dc02a7a0c.setIcon(div_icon_8a1ba524df6646d24428c1f8e0f3f659);
+            
+    
+            feature_group_e32e175acb080d9e5f4f4848ece4cd72.addTo(map_91809f3fd3cdba69a645523c3b26c65b);
+        
+    
+            var layer_control_3856f69c09bc12ffebac9c1ca6013a1e_layers = {
+                base_layers : {
+                    "cartodbdarkmatter" : tile_layer_111689f5ff69f11dda2f94dfabb15194,
+                    "Light Mode" : tile_layer_27f6b316c1a7d25c6a5fdab8a3fd7454,
+                    "Detailed Street Map" : tile_layer_73aa064854a28c9cd2330dea8b7cf82c,
+                },
+                overlays :  {
+                    "Ranked Hotspots" : feature_group_e32e175acb080d9e5f4f4848ece4cd72,
+                },
+            };
+            let layer_control_3856f69c09bc12ffebac9c1ca6013a1e = L.control.layers(
+                layer_control_3856f69c09bc12ffebac9c1ca6013a1e_layers.base_layers,
+                layer_control_3856f69c09bc12ffebac9c1ca6013a1e_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": false,
+  "autoZIndex": true,
+}
+            ).addTo(map_91809f3fd3cdba69a645523c3b26c65b);
+
+        
+</script>
+</html>

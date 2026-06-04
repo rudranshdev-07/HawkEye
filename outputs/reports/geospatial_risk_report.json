@@ -1,0 +1,584 @@
+{
+    "summary": {
+        "total_crimes_analyzed": 4903,
+        "map_center": {
+            "latitude": 41.87129154376927,
+            "longitude": -87.64602913706915
+        },
+        "hotspots_detected_count": 10,
+        "dbscan_clusters_count": 17,
+        "dbscan_noise_count": 2865,
+        "dbscan_noise_percentage": 58.43
+    },
+    "regional_risk": {
+        "district_risk": {
+            "D-12": {
+                "crime_count": 357,
+                "percentage": 7.28,
+                "risk_level": "HIGH"
+            },
+            "D-10": {
+                "crime_count": 353,
+                "percentage": 7.2,
+                "risk_level": "HIGH"
+            },
+            "D-11": {
+                "crime_count": 347,
+                "percentage": 7.08,
+                "risk_level": "HIGH"
+            },
+            "D-15": {
+                "crime_count": 341,
+                "percentage": 6.95,
+                "risk_level": "HIGH"
+            },
+            "D-02": {
+                "crime_count": 340,
+                "percentage": 6.93,
+                "risk_level": "MEDIUM"
+            },
+            "D-01": {
+                "crime_count": 336,
+                "percentage": 6.85,
+                "risk_level": "MEDIUM"
+            },
+            "D-09": {
+                "crime_count": 322,
+                "percentage": 6.57,
+                "risk_level": "MEDIUM"
+            },
+            "D-13": {
+                "crime_count": 319,
+                "percentage": 6.51,
+                "risk_level": "MEDIUM"
+            },
+            "D-07": {
+                "crime_count": 319,
+                "percentage": 6.51,
+                "risk_level": "MEDIUM"
+            },
+            "D-04": {
+                "crime_count": 319,
+                "percentage": 6.51,
+                "risk_level": "MEDIUM"
+            },
+            "D-14": {
+                "crime_count": 318,
+                "percentage": 6.49,
+                "risk_level": "LOW"
+            },
+            "D-08": {
+                "crime_count": 318,
+                "percentage": 6.49,
+                "risk_level": "LOW"
+            },
+            "D-03": {
+                "crime_count": 317,
+                "percentage": 6.47,
+                "risk_level": "LOW"
+            },
+            "D-05": {
+                "crime_count": 307,
+                "percentage": 6.26,
+                "risk_level": "LOW"
+            },
+            "D-06": {
+                "crime_count": 290,
+                "percentage": 5.91,
+                "risk_level": "LOW"
+            }
+        },
+        "ward_risk": {
+            "W-38": {
+                "crime_count": 120,
+                "percentage": 2.45,
+                "risk_level": "HIGH"
+            },
+            "W-41": {
+                "crime_count": 119,
+                "percentage": 2.43,
+                "risk_level": "HIGH"
+            },
+            "W-07": {
+                "crime_count": 113,
+                "percentage": 2.3,
+                "risk_level": "HIGH"
+            },
+            "W-28": {
+                "crime_count": 113,
+                "percentage": 2.3,
+                "risk_level": "HIGH"
+            },
+            "W-25": {
+                "crime_count": 112,
+                "percentage": 2.28,
+                "risk_level": "HIGH"
+            },
+            "W-50": {
+                "crime_count": 109,
+                "percentage": 2.22,
+                "risk_level": "HIGH"
+            },
+            "W-20": {
+                "crime_count": 108,
+                "percentage": 2.2,
+                "risk_level": "HIGH"
+            },
+            "W-01": {
+                "crime_count": 107,
+                "percentage": 2.18,
+                "risk_level": "HIGH"
+            },
+            "W-49": {
+                "crime_count": 107,
+                "percentage": 2.18,
+                "risk_level": "HIGH"
+            },
+            "W-48": {
+                "crime_count": 107,
+                "percentage": 2.18,
+                "risk_level": "HIGH"
+            },
+            "W-10": {
+                "crime_count": 105,
+                "percentage": 2.14,
+                "risk_level": "HIGH"
+            },
+            "W-32": {
+                "crime_count": 105,
+                "percentage": 2.14,
+                "risk_level": "HIGH"
+            },
+            "W-44": {
+                "crime_count": 104,
+                "percentage": 2.12,
+                "risk_level": "HIGH"
+            },
+            "W-12": {
+                "crime_count": 104,
+                "percentage": 2.12,
+                "risk_level": "HIGH"
+            },
+            "W-22": {
+                "crime_count": 104,
+                "percentage": 2.12,
+                "risk_level": "HIGH"
+            },
+            "W-24": {
+                "crime_count": 104,
+                "percentage": 2.12,
+                "risk_level": "HIGH"
+            },
+            "W-36": {
+                "crime_count": 103,
+                "percentage": 2.1,
+                "risk_level": "MEDIUM"
+            },
+            "W-13": {
+                "crime_count": 103,
+                "percentage": 2.1,
+                "risk_level": "MEDIUM"
+            },
+            "W-08": {
+                "crime_count": 102,
+                "percentage": 2.08,
+                "risk_level": "MEDIUM"
+            },
+            "W-31": {
+                "crime_count": 101,
+                "percentage": 2.06,
+                "risk_level": "MEDIUM"
+            },
+            "W-16": {
+                "crime_count": 101,
+                "percentage": 2.06,
+                "risk_level": "MEDIUM"
+            },
+            "W-43": {
+                "crime_count": 100,
+                "percentage": 2.04,
+                "risk_level": "MEDIUM"
+            },
+            "W-40": {
+                "crime_count": 100,
+                "percentage": 2.04,
+                "risk_level": "MEDIUM"
+            },
+            "W-30": {
+                "crime_count": 98,
+                "percentage": 2.0,
+                "risk_level": "MEDIUM"
+            },
+            "W-34": {
+                "crime_count": 98,
+                "percentage": 2.0,
+                "risk_level": "MEDIUM"
+            },
+            "W-06": {
+                "crime_count": 97,
+                "percentage": 1.98,
+                "risk_level": "MEDIUM"
+            },
+            "W-02": {
+                "crime_count": 97,
+                "percentage": 1.98,
+                "risk_level": "MEDIUM"
+            },
+            "W-42": {
+                "crime_count": 96,
+                "percentage": 1.96,
+                "risk_level": "MEDIUM"
+            },
+            "W-05": {
+                "crime_count": 96,
+                "percentage": 1.96,
+                "risk_level": "MEDIUM"
+            },
+            "W-47": {
+                "crime_count": 96,
+                "percentage": 1.96,
+                "risk_level": "MEDIUM"
+            },
+            "W-23": {
+                "crime_count": 95,
+                "percentage": 1.94,
+                "risk_level": "MEDIUM"
+            },
+            "W-21": {
+                "crime_count": 94,
+                "percentage": 1.92,
+                "risk_level": "MEDIUM"
+            },
+            "W-27": {
+                "crime_count": 94,
+                "percentage": 1.92,
+                "risk_level": "MEDIUM"
+            },
+            "W-15": {
+                "crime_count": 94,
+                "percentage": 1.92,
+                "risk_level": "MEDIUM"
+            },
+            "W-19": {
+                "crime_count": 94,
+                "percentage": 1.92,
+                "risk_level": "MEDIUM"
+            },
+            "W-09": {
+                "crime_count": 93,
+                "percentage": 1.9,
+                "risk_level": "MEDIUM"
+            },
+            "W-35": {
+                "crime_count": 92,
+                "percentage": 1.88,
+                "risk_level": "LOW"
+            },
+            "W-39": {
+                "crime_count": 92,
+                "percentage": 1.88,
+                "risk_level": "LOW"
+            },
+            "W-17": {
+                "crime_count": 92,
+                "percentage": 1.88,
+                "risk_level": "LOW"
+            },
+            "W-37": {
+                "crime_count": 92,
+                "percentage": 1.88,
+                "risk_level": "LOW"
+            },
+            "W-11": {
+                "crime_count": 90,
+                "percentage": 1.84,
+                "risk_level": "LOW"
+            },
+            "W-45": {
+                "crime_count": 89,
+                "percentage": 1.82,
+                "risk_level": "LOW"
+            },
+            "W-46": {
+                "crime_count": 89,
+                "percentage": 1.82,
+                "risk_level": "LOW"
+            },
+            "W-26": {
+                "crime_count": 88,
+                "percentage": 1.79,
+                "risk_level": "LOW"
+            },
+            "W-29": {
+                "crime_count": 87,
+                "percentage": 1.77,
+                "risk_level": "LOW"
+            },
+            "W-33": {
+                "crime_count": 83,
+                "percentage": 1.69,
+                "risk_level": "LOW"
+            },
+            "W-14": {
+                "crime_count": 82,
+                "percentage": 1.67,
+                "risk_level": "LOW"
+            },
+            "W-03": {
+                "crime_count": 82,
+                "percentage": 1.67,
+                "risk_level": "LOW"
+            },
+            "W-04": {
+                "crime_count": 77,
+                "percentage": 1.57,
+                "risk_level": "LOW"
+            },
+            "W-18": {
+                "crime_count": 75,
+                "percentage": 1.53,
+                "risk_level": "LOW"
+            }
+        }
+    },
+    "hotspots": [
+        {
+            "rank": 1,
+            "latitude": 41.87525,
+            "longitude": -87.62804,
+            "incident_count": 100,
+            "percentage": 2.04,
+            "top_categories": "ROBBERY (18), MOTOR VEHICLE THEFT (16), ASSAULT (16)",
+            "arrest_rate": 21.0,
+            "domestic_rate": 9.0
+        },
+        {
+            "rank": 2,
+            "latitude": 41.88526,
+            "longitude": -87.62862,
+            "incident_count": 99,
+            "percentage": 2.02,
+            "top_categories": "ASSAULT (14), NARCOTICS (14), THEFT (14)",
+            "arrest_rate": 37.37,
+            "domestic_rate": 18.18
+        },
+        {
+            "rank": 3,
+            "latitude": 41.88544,
+            "longitude": -87.63629,
+            "incident_count": 96,
+            "percentage": 1.96,
+            "top_categories": "NARCOTICS (16), CRIMINAL DAMAGE (15), BURGLARY (13)",
+            "arrest_rate": 35.42,
+            "domestic_rate": 10.42
+        },
+        {
+            "rank": 4,
+            "latitude": 41.87558,
+            "longitude": -87.63571,
+            "incident_count": 89,
+            "percentage": 1.82,
+            "top_categories": "ROBBERY (20), MOTOR VEHICLE THEFT (15), BATTERY (11)",
+            "arrest_rate": 30.34,
+            "domestic_rate": 13.48
+        },
+        {
+            "rank": 5,
+            "latitude": 41.86565,
+            "longitude": -87.62082,
+            "incident_count": 87,
+            "percentage": 1.77,
+            "top_categories": "CRIMINAL DAMAGE (13), NARCOTICS (13), MOTOR VEHICLE THEFT (12)",
+            "arrest_rate": 36.78,
+            "domestic_rate": 13.79
+        },
+        {
+            "rank": 6,
+            "latitude": 41.87544,
+            "longitude": -87.62105,
+            "incident_count": 81,
+            "percentage": 1.65,
+            "top_categories": "ROBBERY (16), ASSAULT (14), THEFT (12)",
+            "arrest_rate": 40.74,
+            "domestic_rate": 7.41
+        },
+        {
+            "rank": 7,
+            "latitude": 41.86599,
+            "longitude": -87.63662,
+            "incident_count": 81,
+            "percentage": 1.65,
+            "top_categories": "BURGLARY (16), MOTOR VEHICLE THEFT (14), ASSAULT (13)",
+            "arrest_rate": 25.93,
+            "domestic_rate": 17.28
+        },
+        {
+            "rank": 8,
+            "latitude": 41.88576,
+            "longitude": -87.62067,
+            "incident_count": 77,
+            "percentage": 1.57,
+            "top_categories": "THEFT (13), BATTERY (12), ROBBERY (11)",
+            "arrest_rate": 20.78,
+            "domestic_rate": 14.29
+        },
+        {
+            "rank": 9,
+            "latitude": 41.8855,
+            "longitude": -87.64399,
+            "incident_count": 75,
+            "percentage": 1.53,
+            "top_categories": "BATTERY (13), NARCOTICS (12), ROBBERY (12)",
+            "arrest_rate": 32.0,
+            "domestic_rate": 8.0
+        },
+        {
+            "rank": 10,
+            "latitude": 41.87519,
+            "longitude": -87.61229,
+            "incident_count": 67,
+            "percentage": 1.37,
+            "top_categories": "MOTOR VEHICLE THEFT (12), THEFT (11), ROBBERY (9)",
+            "arrest_rate": 28.36,
+            "domestic_rate": 13.43
+        }
+    ],
+    "clusters": {
+        "0": {
+            "cluster_id": 0,
+            "size": 1497,
+            "percentage": 30.53,
+            "centroid_lat": 41.87733,
+            "centroid_lon": -87.62936,
+            "top_categories": "ROBBERY (209), MOTOR VEHICLE THEFT (202)"
+        },
+        "1": {
+            "cluster_id": 1,
+            "size": 26,
+            "percentage": 0.53,
+            "centroid_lat": 41.75967,
+            "centroid_lon": -87.62691,
+            "top_categories": "BATTERY (7), ROBBERY (6)"
+        },
+        "2": {
+            "cluster_id": 2,
+            "size": 219,
+            "percentage": 4.47,
+            "centroid_lat": 41.94603,
+            "centroid_lon": -87.65668,
+            "top_categories": "BATTERY (34), ROBBERY (33)"
+        },
+        "3": {
+            "cluster_id": 3,
+            "size": 25,
+            "percentage": 0.51,
+            "centroid_lat": 41.90184,
+            "centroid_lon": -87.62189,
+            "top_categories": "NARCOTICS (6), ROBBERY (4)"
+        },
+        "4": {
+            "cluster_id": 4,
+            "size": 21,
+            "percentage": 0.43,
+            "centroid_lat": 41.95455,
+            "centroid_lon": -87.64672,
+            "top_categories": "CRIMINAL DAMAGE (4), BURGLARY (4)"
+        },
+        "5": {
+            "cluster_id": 5,
+            "size": 37,
+            "percentage": 0.75,
+            "centroid_lat": 41.96279,
+            "centroid_lon": -87.64624,
+            "top_categories": "ROBBERY (5), BURGLARY (5)"
+        },
+        "6": {
+            "cluster_id": 6,
+            "size": 23,
+            "percentage": 0.47,
+            "centroid_lat": 41.84757,
+            "centroid_lon": -87.63091,
+            "top_categories": "BATTERY (7), ROBBERY (4)"
+        },
+        "7": {
+            "cluster_id": 7,
+            "size": 34,
+            "percentage": 0.69,
+            "centroid_lat": 41.94362,
+            "centroid_lon": -87.67205,
+            "top_categories": "NARCOTICS (7), BURGLARY (6)"
+        },
+        "8": {
+            "cluster_id": 8,
+            "size": 18,
+            "percentage": 0.37,
+            "centroid_lat": 41.76866,
+            "centroid_lon": -87.62367,
+            "top_categories": "NARCOTICS (5), BURGLARY (3)"
+        },
+        "9": {
+            "cluster_id": 9,
+            "size": 23,
+            "percentage": 0.47,
+            "centroid_lat": 41.89501,
+            "centroid_lon": -87.61072,
+            "top_categories": "ROBBERY (4), MOTOR VEHICLE THEFT (4)"
+        },
+        "10": {
+            "cluster_id": 10,
+            "size": 22,
+            "percentage": 0.45,
+            "centroid_lat": 41.87865,
+            "centroid_lon": -87.71889,
+            "top_categories": "ASSAULT (5), THEFT (4)"
+        },
+        "11": {
+            "cluster_id": 11,
+            "size": 15,
+            "percentage": 0.31,
+            "centroid_lat": 41.76283,
+            "centroid_lon": -87.63393,
+            "top_categories": "NARCOTICS (5), ROBBERY (2)"
+        },
+        "12": {
+            "cluster_id": 12,
+            "size": 24,
+            "percentage": 0.49,
+            "centroid_lat": 41.78176,
+            "centroid_lon": -87.63699,
+            "top_categories": "NARCOTICS (5), ASSAULT (5)"
+        },
+        "13": {
+            "cluster_id": 13,
+            "size": 10,
+            "percentage": 0.2,
+            "centroid_lat": 41.948,
+            "centroid_lon": -87.64647,
+            "top_categories": "BURGLARY (3), CRIMINAL DAMAGE (2)"
+        },
+        "14": {
+            "cluster_id": 14,
+            "size": 12,
+            "percentage": 0.24,
+            "centroid_lat": 41.93252,
+            "centroid_lon": -87.65354,
+            "top_categories": "ASSAULT (2), BATTERY (2)"
+        },
+        "15": {
+            "cluster_id": 15,
+            "size": 15,
+            "percentage": 0.31,
+            "centroid_lat": 41.77616,
+            "centroid_lon": -87.6234,
+            "top_categories": "ROBBERY (6), BATTERY (3)"
+        },
+        "16": {
+            "cluster_id": 16,
+            "size": 17,
+            "percentage": 0.35,
+            "centroid_lat": 41.93643,
+            "centroid_lon": -87.64188,
+            "top_categories": "BATTERY (5), ASSAULT (3)"
+        }
+    }
+}

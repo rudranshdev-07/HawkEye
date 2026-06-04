@@ -34,3 +34,91 @@ Length: 1, dtype: str
 [2026-06-04 23:30:21] INFO [HawkEye.clean_and_validate_data:151] Cleaning complete. Retained 3 of 5 raw rows.
 [2026-06-04 23:30:21] WARNING [HawkEye.clean_and_validate_data:103] Found 1 rows with invalid date formats. Dropping them.
 [2026-06-04 23:30:21] INFO [HawkEye.clean_and_validate_data:151] Cleaning complete. Retained 3 of 4 raw rows.
+[2026-06-04 23:46:14] INFO [HawkEye.main:32] Starting Crime Analytics Engine...
+[2026-06-04 23:46:14] INFO [HawkEye.generate_all_reports:180] Generating full analytical profile...
+[2026-06-04 23:46:14] INFO [HawkEye.run_frequency_analysis:52] Frequency Analysis: 4903 crimes across 1076 days. Daily average: 4.56
+[2026-06-04 23:46:14] INFO [HawkEye.run_category_analysis:77] Category Analysis: computed stats for 10 distinct categories.
+[2026-06-04 23:46:14] INFO [HawkEye.run_temporal_analysis:112] Temporal Analysis complete.
+[2026-06-04 23:46:14] INFO [HawkEye.run_location_analysis:129] Location Analysis complete (Top 10 profiles).
+[2026-06-04 23:46:14] CRITICAL [HawkEye.main:91] Analytics engine failed: not enough values to unpack (expected 3, got 2)
+Traceback (most recent call last):
+  File "C:\Users\LENOVO\OneDrive\Documents\Ardy\HawkEye\src\run_analytics.py", line 45, in main
+    report = engine.generate_all_reports()
+  File "C:\Users\LENOVO\OneDrive\Documents\Ardy\HawkEye\src\analytics\analytics_engine.py", line 186, in generate_all_reports
+    "statistics": self.run_statistical_summaries()
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\LENOVO\OneDrive\Documents\Ardy\HawkEye\src\analytics\analytics_engine.py", line 162, in run_statistical_summaries
+    for (_, hour, dow), count in self.df.groupby(["hour", "day_of_week"]).size().items():
+        ^^^^^^^^^^^^^^
+ValueError: not enough values to unpack (expected 3, got 2)
+[2026-06-04 23:47:02] INFO [HawkEye.main:32] Starting Crime Analytics Engine...
+[2026-06-04 23:47:02] INFO [HawkEye.generate_all_reports:180] Generating full analytical profile...
+[2026-06-04 23:47:02] INFO [HawkEye.run_frequency_analysis:52] Frequency Analysis: 4903 crimes across 1076 days. Daily average: 4.56
+[2026-06-04 23:47:02] INFO [HawkEye.run_category_analysis:77] Category Analysis: computed stats for 10 distinct categories.
+[2026-06-04 23:47:02] INFO [HawkEye.run_temporal_analysis:112] Temporal Analysis complete.
+[2026-06-04 23:47:02] INFO [HawkEye.run_location_analysis:129] Location Analysis complete (Top 10 profiles).
+[2026-06-04 23:47:02] INFO [HawkEye.run_statistical_summaries:168] Statistical Summaries complete.
+[2026-06-04 23:47:02] INFO [HawkEye.main:55] JSON analysis summary saved to: data/processed/analytics_summary.json
+[2026-06-04 23:47:02] INFO [HawkEye.generate_and_save_charts:33] Created directory for charts: reports/charts
+[2026-06-04 23:47:09] INFO [HawkEye.generate_and_save_charts:54] Category distribution chart saved.
+[2026-06-04 23:47:09] INFO [HawkEye.generate_and_save_charts:77] Hourly distribution chart saved.
+[2026-06-04 23:47:09] INFO [HawkEye.generate_and_save_charts:96] Weekly distribution chart saved.
+[2026-06-04 23:47:09] INFO [HawkEye.generate_and_save_charts:116] Monthly seasonality chart saved.
+[2026-06-04 23:47:10] INFO [HawkEye.generate_and_save_charts:143] Crime density heatmap saved.
+[2026-06-04 23:47:10] INFO [HawkEye.generate_and_save_charts:147] All analytical charts generated successfully.
+[2026-06-04 23:47:21] INFO [HawkEye.run_frequency_analysis:52] Frequency Analysis: 5 crimes across 4 days. Daily average: 1.25
+[2026-06-04 23:47:21] INFO [HawkEye.run_category_analysis:77] Category Analysis: computed stats for 3 distinct categories.
+[2026-06-04 23:47:21] INFO [HawkEye.run_temporal_analysis:112] Temporal Analysis complete.
+[2026-06-04 23:47:21] INFO [HawkEye.run_location_analysis:129] Location Analysis complete (Top 10 profiles).
+[2026-06-04 23:47:21] INFO [HawkEye.run_statistical_summaries:168] Statistical Summaries complete.
+[2026-06-04 23:47:21] INFO [HawkEye.validate_schema:48] Schema validation succeeded. All required columns are present.
+[2026-06-04 23:47:21] ERROR [HawkEye.validate_schema:45] Schema validation failed. Missing required columns: ['crime_id']
+[2026-06-04 23:47:21] INFO [HawkEye.validate_schema:48] Schema validation succeeded. All required columns are present.
+[2026-06-04 23:47:21] WARNING [HawkEye.clean_and_validate_data:82] Found 2 rows with duplicate crime_id.
+[2026-06-04 23:47:21] INFO [HawkEye.clean_and_validate_data:92] Removed 1 duplicate rows.
+[2026-06-04 23:47:21] INFO [HawkEye.clean_and_validate_data:151] Cleaning complete. Retained 3 of 4 raw rows.
+[2026-06-04 23:47:21] WARNING [HawkEye.clean_and_validate_data:75] Column 'latitude' has 1 missing values (20.00%).
+[2026-06-04 23:47:21] WARNING [HawkEye.clean_and_validate_data:75] Column 'longitude' has 1 missing values (20.00%).
+[2026-06-04 23:47:21] WARNING [HawkEye.clean_and_validate_data:125] Found 2 rows with invalid coordinates. Dropping them.
+[2026-06-04 23:47:21] INFO [HawkEye.clean_and_validate_data:151] Cleaning complete. Retained 3 of 5 raw rows.
+[2026-06-04 23:47:21] WARNING [HawkEye.clean_and_validate_data:103] Found 1 rows with invalid date formats. Dropping them.
+[2026-06-04 23:47:21] INFO [HawkEye.clean_and_validate_data:151] Cleaning complete. Retained 3 of 4 raw rows.
+[2026-06-04 23:54:21] INFO [HawkEye.main:34] Starting Geospatial Intelligence Engine...
+[2026-06-04 23:54:21] INFO [HawkEye.compute_regional_statistics:113] Geographic statistics computed for 15 districts and 50 wards.
+[2026-06-04 23:54:21] INFO [HawkEye.detect_crime_hotspots:71] Hotspot Detection: Identified and ranked the top 10 geospatial hotspots.
+[2026-06-04 23:54:21] INFO [HawkEye.generate_crime_heatmap:28] Generating heatmap around map center: (41.8713, -87.6460)
+[2026-06-04 23:54:21] INFO [HawkEye.generate_crime_heatmap:64] Geospatial crime heatmap successfully saved to: outputs/maps\crime_heatmap.html
+[2026-06-04 23:54:21] INFO [HawkEye.generate_hotspot_map:163] Geospatial hotspot map saved to: outputs/maps\hotspot_map.html
+[2026-06-04 23:54:21] INFO [HawkEye.run_dbscan_clustering:36] Running DBSCAN: eps=300m (0.000047 rad), min_samples=15
+[2026-06-04 23:54:21] INFO [HawkEye.run_dbscan_clustering:73] DBSCAN complete. Found 17 clusters. Noise points: 2865.
+[2026-06-04 23:54:26] INFO [HawkEye.generate_cluster_map:185] Geospatial cluster map saved to: outputs/maps\cluster_map.html
+[2026-06-04 23:54:26] INFO [HawkEye.main:88] Geospatial Risk Summary saved to: outputs/reports\geospatial_risk_report.json
+[2026-06-04 23:54:47] INFO [HawkEye.run_frequency_analysis:52] Frequency Analysis: 5 crimes across 4 days. Daily average: 1.25
+[2026-06-04 23:54:47] INFO [HawkEye.run_category_analysis:77] Category Analysis: computed stats for 3 distinct categories.
+[2026-06-04 23:54:47] INFO [HawkEye.run_temporal_analysis:112] Temporal Analysis complete.
+[2026-06-04 23:54:47] INFO [HawkEye.run_location_analysis:129] Location Analysis complete (Top 10 profiles).
+[2026-06-04 23:54:47] INFO [HawkEye.run_statistical_summaries:168] Statistical Summaries complete.
+[2026-06-04 23:54:47] WARNING [HawkEye.validate_coordinates:35] Geospatial Validation: Dropped 3 rows with invalid coordinates.
+[2026-06-04 23:54:47] INFO [HawkEye.compute_regional_statistics:113] Geographic statistics computed for 3 districts and 3 wards.
+[2026-06-04 23:54:47] INFO [HawkEye.detect_crime_hotspots:71] Hotspot Detection: Identified and ranked the top 3 geospatial hotspots.
+[2026-06-04 23:54:47] INFO [HawkEye.run_dbscan_clustering:36] Running DBSCAN: eps=400m (0.000063 rad), min_samples=10
+[2026-06-04 23:54:47] INFO [HawkEye.run_dbscan_clustering:73] DBSCAN complete. Found 2 clusters. Noise points: 1.
+[2026-06-04 23:54:47] INFO [HawkEye.generate_crime_heatmap:28] Generating heatmap around map center: (41.9089, -87.6453)
+[2026-06-04 23:54:47] INFO [HawkEye.generate_crime_heatmap:64] Geospatial crime heatmap successfully saved to: C:\Users\LENOVO\AppData\Local\Temp\tmpnyqy5dg0\heatmap.html
+[2026-06-04 23:54:47] INFO [HawkEye.detect_crime_hotspots:71] Hotspot Detection: Identified and ranked the top 2 geospatial hotspots.
+[2026-06-04 23:54:47] INFO [HawkEye.generate_hotspot_map:163] Geospatial hotspot map saved to: C:\Users\LENOVO\AppData\Local\Temp\tmpnyqy5dg0\hotspots.html
+[2026-06-04 23:54:47] INFO [HawkEye.run_dbscan_clustering:36] Running DBSCAN: eps=400m (0.000063 rad), min_samples=10
+[2026-06-04 23:54:47] INFO [HawkEye.run_dbscan_clustering:73] DBSCAN complete. Found 2 clusters. Noise points: 1.
+[2026-06-04 23:54:47] INFO [HawkEye.generate_cluster_map:185] Geospatial cluster map saved to: C:\Users\LENOVO\AppData\Local\Temp\tmpnyqy5dg0\clusters.html
+[2026-06-04 23:54:47] INFO [HawkEye.validate_schema:48] Schema validation succeeded. All required columns are present.
+[2026-06-04 23:54:47] ERROR [HawkEye.validate_schema:45] Schema validation failed. Missing required columns: ['crime_id']
+[2026-06-04 23:54:47] INFO [HawkEye.validate_schema:48] Schema validation succeeded. All required columns are present.
+[2026-06-04 23:54:47] WARNING [HawkEye.clean_and_validate_data:82] Found 2 rows with duplicate crime_id.
+[2026-06-04 23:54:47] INFO [HawkEye.clean_and_validate_data:92] Removed 1 duplicate rows.
+[2026-06-04 23:54:47] INFO [HawkEye.clean_and_validate_data:151] Cleaning complete. Retained 3 of 4 raw rows.
+[2026-06-04 23:54:47] WARNING [HawkEye.clean_and_validate_data:75] Column 'latitude' has 1 missing values (20.00%).
+[2026-06-04 23:54:47] WARNING [HawkEye.clean_and_validate_data:75] Column 'longitude' has 1 missing values (20.00%).
+[2026-06-04 23:54:47] WARNING [HawkEye.clean_and_validate_data:125] Found 2 rows with invalid coordinates. Dropping them.
+[2026-06-04 23:54:47] INFO [HawkEye.clean_and_validate_data:151] Cleaning complete. Retained 3 of 5 raw rows.
+[2026-06-04 23:54:47] WARNING [HawkEye.clean_and_validate_data:103] Found 1 rows with invalid date formats. Dropping them.
+[2026-06-04 23:54:47] INFO [HawkEye.clean_and_validate_data:151] Cleaning complete. Retained 3 of 4 raw rows.

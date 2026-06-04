@@ -21,15 +21,15 @@ graph TD
 ## Phases
 
 ### [x] Phase 1: Data Ingestion System
-- **Status**: In Progress
+- **Status**: Completed
 - **Key Features**: Schema checking, coordinate validation, missing value reports, duplicate removal, logging.
 
-### [ ] Phase 2: Crime Analytics Engine
-- **Status**: Not Started
+### [x] Phase 2: Crime Analytics Engine
+- **Status**: Completed
 - **Key Features**: Spatial-temporal analysis, trend profiling, seasonal patterns.
 
-### [ ] Phase 3: Geospatial Intelligence Engine
-- **Status**: Not Started
+### [x] Phase 3: Geospatial Intelligence Engine
+- **Status**: Completed
 - **Key Features**: Hotspot heatmaps, interactive Folium maps, coordinate verification.
 
 ### [ ] Phase 4: Machine Learning System
