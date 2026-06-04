@@ -1,0 +1,36 @@
+[2026-06-04 23:29:43] INFO [HawkEye.generate_crime_dataset:17] Generating synthetic dataset with 5000 records...
+[2026-06-04 23:29:43] INFO [HawkEye.generate_crime_dataset:121] Injecting anomalies for ingestion system validation...
+[2026-06-04 23:30:02] INFO [HawkEye.generate_crime_dataset:17] Generating synthetic dataset with 5000 records...
+[2026-06-04 23:30:02] INFO [HawkEye.generate_crime_dataset:121] Injecting anomalies for ingestion system validation...
+[2026-06-04 23:30:02] INFO [HawkEye.generate_crime_dataset:170] Anomaly injection complete. Generated shape: (5100, 11)
+[2026-06-04 23:30:02] INFO [HawkEye.<module>:188] Mock crime dataset saved to: data/raw/crime_raw_data.csv
+[2026-06-04 23:30:08] INFO [HawkEye.main:24] Starting Data Ingestion System...
+[2026-06-04 23:30:08] INFO [HawkEye.load_csv:26] Attempting to load CSV file from: data/raw/crime_raw_data.csv
+[2026-06-04 23:30:08] INFO [HawkEye.load_csv:29] Successfully loaded CSV with 5100 rows and 11 columns.
+[2026-06-04 23:30:08] INFO [HawkEye.validate_schema:48] Schema validation succeeded. All required columns are present.
+[2026-06-04 23:30:08] WARNING [HawkEye.clean_and_validate_data:75] Column 'description' has 150 missing values (2.94%).
+[2026-06-04 23:30:08] WARNING [HawkEye.clean_and_validate_data:75] Column 'latitude' has 50 missing values (0.98%).
+[2026-06-04 23:30:08] WARNING [HawkEye.clean_and_validate_data:75] Column 'longitude' has 50 missing values (0.98%).
+[2026-06-04 23:30:08] WARNING [HawkEye.clean_and_validate_data:75] Column 'domestic' has 100 missing values (1.96%).
+[2026-06-04 23:30:08] WARNING [HawkEye.clean_and_validate_data:82] Found 200 rows with duplicate crime_id.
+[2026-06-04 23:30:08] INFO [HawkEye.clean_and_validate_data:92] Removed 100 duplicate rows.
+[2026-06-04 23:30:09] WARNING [HawkEye.clean_and_validate_data:103] Found 23 rows with invalid date formats. Dropping them.
+[2026-06-04 23:30:09] WARNING [HawkEye.clean_and_validate_data:125] Found 74 rows with invalid coordinates. Dropping them.
+[2026-06-04 23:30:09] WARNING [HawkEye.clean_and_validate_data:148] Found unrecognized crime categories in data: <ArrowStringArray>
+['PETTY THEFT']
+Length: 1, dtype: str
+[2026-06-04 23:30:09] INFO [HawkEye.clean_and_validate_data:151] Cleaning complete. Retained 4903 of 5100 raw rows.
+[2026-06-04 23:30:09] INFO [HawkEye.process_and_save:178] Processed dataset saved to: data/processed/crime_processed_data.csv
+[2026-06-04 23:30:09] INFO [HawkEye.main:36] Ingestion completed successfully.
+[2026-06-04 23:30:21] INFO [HawkEye.validate_schema:48] Schema validation succeeded. All required columns are present.
+[2026-06-04 23:30:21] ERROR [HawkEye.validate_schema:45] Schema validation failed. Missing required columns: ['crime_id']
+[2026-06-04 23:30:21] INFO [HawkEye.validate_schema:48] Schema validation succeeded. All required columns are present.
+[2026-06-04 23:30:21] WARNING [HawkEye.clean_and_validate_data:82] Found 2 rows with duplicate crime_id.
+[2026-06-04 23:30:21] INFO [HawkEye.clean_and_validate_data:92] Removed 1 duplicate rows.
+[2026-06-04 23:30:21] INFO [HawkEye.clean_and_validate_data:151] Cleaning complete. Retained 3 of 4 raw rows.
+[2026-06-04 23:30:21] WARNING [HawkEye.clean_and_validate_data:75] Column 'latitude' has 1 missing values (20.00%).
+[2026-06-04 23:30:21] WARNING [HawkEye.clean_and_validate_data:75] Column 'longitude' has 1 missing values (20.00%).
+[2026-06-04 23:30:21] WARNING [HawkEye.clean_and_validate_data:125] Found 2 rows with invalid coordinates. Dropping them.
+[2026-06-04 23:30:21] INFO [HawkEye.clean_and_validate_data:151] Cleaning complete. Retained 3 of 5 raw rows.
+[2026-06-04 23:30:21] WARNING [HawkEye.clean_and_validate_data:103] Found 1 rows with invalid date formats. Dropping them.
+[2026-06-04 23:30:21] INFO [HawkEye.clean_and_validate_data:151] Cleaning complete. Retained 3 of 4 raw rows.
