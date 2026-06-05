@@ -1,5 +1,5 @@
 {
-    "initial_rows": 5100,
+    "initial_rows": 6120,
     "missing_values_before": {
         "crime_id": {
             "count": 0,
@@ -14,15 +14,15 @@
             "percentage": 0.0
         },
         "description": {
-            "count": 150,
+            "count": 180,
             "percentage": 2.94
         },
         "latitude": {
-            "count": 50,
+            "count": 60,
             "percentage": 0.98
         },
         "longitude": {
-            "count": 50,
+            "count": 60,
             "percentage": 0.98
         },
         "location_description": {
@@ -34,7 +34,7 @@
             "percentage": 0.0
         },
         "domestic": {
-            "count": 100,
+            "count": 120,
             "percentage": 1.96
         },
         "district": {
@@ -46,8 +46,8 @@
             "percentage": 0.0
         }
     },
-    "duplicates_removed": 100,
-    "invalid_coordinates_removed": 74,
-    "invalid_dates_removed": 23,
-    "final_rows": 4903
+    "duplicates_removed": 120,
+    "invalid_coordinates_removed": 89,
+    "invalid_dates_removed": 30,
+    "final_rows": 5881
 }

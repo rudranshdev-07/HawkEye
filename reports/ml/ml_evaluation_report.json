@@ -1,0 +1,140 @@
+{
+    "best_model": "Logistic Regression",
+    "metrics": {
+        "Random Forest": {
+            "accuracy": 0.8148,
+            "precision": 0.7605,
+            "recall": 0.5634,
+            "f1_score": 0.6472,
+            "confusion_matrix": [
+                [
+                    759,
+                    63
+                ],
+                [
+                    155,
+                    200
+                ]
+            ]
+        },
+        "Gradient Boosting": {
+            "accuracy": 0.819,
+            "precision": 0.763,
+            "recall": 0.5803,
+            "f1_score": 0.6592,
+            "confusion_matrix": [
+                [
+                    758,
+                    64
+                ],
+                [
+                    149,
+                    206
+                ]
+            ]
+        },
+        "Decision Tree": {
+            "accuracy": 0.7986,
+            "precision": 0.7305,
+            "recall": 0.5268,
+            "f1_score": 0.6121,
+            "confusion_matrix": [
+                [
+                    753,
+                    69
+                ],
+                [
+                    168,
+                    187
+                ]
+            ]
+        },
+        "Logistic Regression": {
+            "accuracy": 0.8284,
+            "precision": 0.7703,
+            "recall": 0.6141,
+            "f1_score": 0.6834,
+            "confusion_matrix": [
+                [
+                    757,
+                    65
+                ],
+                [
+                    137,
+                    218
+                ]
+            ]
+        }
+    },
+    "risk_profile": {
+        "total_assessed": 5881,
+        "overall_averages": {
+            "risk_score": 0.5077,
+            "arrest_probability": 0.301
+        },
+        "risk_level_counts": {
+            "MEDIUM": 1860,
+            "CRITICAL": 1469,
+            "HIGH": 1467,
+            "LOW": 1085
+        },
+        "risk_level_percentages": {
+            "MEDIUM": 31.63,
+            "CRITICAL": 24.98,
+            "HIGH": 24.94,
+            "LOW": 18.45
+        },
+        "category_breakdown": {
+            "ASSAULT": {
+                "count": 770,
+                "avg_risk_score": 0.8327,
+                "avg_arrest_probability": 0.1673
+            },
+            "BATTERY": {
+                "count": 744,
+                "avg_risk_score": 0.2507,
+                "avg_arrest_probability": 0.7493
+            },
+            "BURGLARY": {
+                "count": 700,
+                "avg_risk_score": 0.584,
+                "avg_arrest_probability": 0.124
+            },
+            "CRIMINAL DAMAGE": {
+                "count": 678,
+                "avg_risk_score": 0.4031,
+                "avg_arrest_probability": 0.1362
+            },
+            "MOTOR VEHICLE THEFT": {
+                "count": 735,
+                "avg_risk_score": 0.5593,
+                "avg_arrest_probability": 0.1611
+            },
+            "NARCOTICS": {
+                "count": 739,
+                "avg_risk_score": 0.1784,
+                "avg_arrest_probability": 0.7323
+            },
+            "OTHER OFFENSE": {
+                "count": 13,
+                "avg_risk_score": 0.2964,
+                "avg_arrest_probability": 0.3648
+            },
+            "PETTY THEFT": {
+                "count": 56,
+                "avg_risk_score": 0.3292,
+                "avg_arrest_probability": 0.2946
+            },
+            "ROBBERY": {
+                "count": 761,
+                "avg_risk_score": 0.8379,
+                "avg_arrest_probability": 0.1621
+            },
+            "THEFT": {
+                "count": 685,
+                "avg_risk_score": 0.3984,
+                "avg_arrest_probability": 0.1464
+            }
+        }
+    }
+}
