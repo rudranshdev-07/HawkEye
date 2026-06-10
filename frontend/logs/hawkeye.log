@@ -1,0 +1,3 @@
+[2026-06-10 04:44:10] INFO [HawkEye.get_location_intelligence:89] Intelligence query: (28.6100, 77.2000)
+[2026-06-10 04:45:40] WARNING [HawkEye.get_location_intelligence:208] Hotspot detection error: 'category'
+[2026-06-10 04:45:40] INFO [HawkEye.get_location_intelligence:228] Risk assessment: score=56.91, level=Moderate

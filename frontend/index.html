@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HawkEye - Geospatial Crime Intelligence</title>
+
+    <!-- Leaflet Map & Plugins -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.heat/dist/leaflet-heat.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-draw/dist/leaflet.draw.css">
+    <script src="https://unpkg.com/leaflet-draw/dist/leaflet.draw.js"></script>
+
+    <!-- Chart.js for Trends Visualization -->
+    <script src="https://unpkg.com/chart.js@3/dist/chart.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="advanced-features.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+
+<body>
+
+    <!-- Map Container -->
+    <div id="map"></div>
+
+    <!-- Intelligence Panel -->
+    <div id="panel">
+        <div class="panel-header">
+            <h1>🛰 HawkEye Intelligence</h1>
+            <p class="subtitle">Geospatial Crime Analysis Platform</p>
+            <div class="server-status" id="serverStatus">
+                <span class="status-indicator checking"></span>
+                <span id="statusText">Initializing...</span>
+            </div>
+        </div>
+
+        <!-- Control Panel -->
+        <div class="control-panel card">
+            <div class="control-group">
+                <label class="control-label">🗺️ Map Features</label>
+                <button id="toggleHeatmap" class="btn btn-secondary">Heat Map OFF</button>
+                <button id="toggleRouteMode" class="btn btn-secondary">Draw Route</button>
+            </div>
+            
+            <div class="control-group">
+                <label class="control-label">🔍 Crime Filters</label>
+                <div class="crime-filters">
+                    <label><input type="checkbox" class="crime-filter" value="ASSAULT"> Assault</label>
+                    <label><input type="checkbox" class="crime-filter" value="ROBBERY"> Robbery</label>
+                    <label><input type="checkbox" class="crime-filter" value="THEFT"> Theft</label>
+                    <label><input type="checkbox" class="crime-filter" value="BURGLARY"> Burglary</label>
+                    <label><input type="checkbox" class="crime-filter" value="NARCOTICS"> Narcotics</label>
+                </div>
+                <button id="clearFilters" class="btn btn-small">Clear</button>
+            </div>
+        </div>
+
+        <!-- Main Result Card -->
+        <div class="card" id="resultCard">
+            <div id="resultBox" class="result-content">
+                <p class="instruction">👆 Click on the map to analyze a location</p>
+            </div>
+        </div>
+
+        <!-- Loading Indicator -->
+        <div class="card" id="loadingCard" style="display: none;">
+            <div class="loading-spinner">
+                <div class="spinner"></div>
+                <p>Analyzing location intelligence...</p>
+            </div>
+        </div>
+
+        <!-- Error Message -->
+        <div class="card" id="errorCard" style="display: none;">
+            <div class="error-message">
+                <span class="error-icon">⚠️</span>
+                <div id="errorText"></div>
+                <button onclick="hideError()" class="btn-dismiss">Dismiss</button>
+            </div>
+        </div>
+
+        <!-- Tabs for Additional Features -->
+        <div class="tabs" style="display: none;" id="advancedTabs">
+            <div class="tab-buttons">
+                <button class="tab-btn active" data-tab="forecast">📈 Forecast</button>
+                <button class="tab-btn" data-tab="trends">📊 Trends</button>
+                <button class="tab-btn" data-tab="routes">🛣️ Routes</button>
+                <button class="tab-btn" data-tab="compare">⚖️ Compare</button>
+            </div>
+            
+            <div class="tab-content">
+                <!-- Forecast Tab -->
+                <div id="forecast-tab" class="tab-pane active">
+                    <div id="forecastContainer"></div>
+                </div>
+                
+                <!-- Trends Tab -->
+                <div id="trends-tab" class="tab-pane">
+                    <canvas id="trendsChart" width="400" height="100"></canvas>
+                </div>
+                
+                <!-- Routes Tab -->
+                <div id="routes-tab" class="tab-pane">
+                    <div id="routeAnalysis"></div>
+                </div>
+                
+                <!-- Compare Tab -->
+                <div id="compare-tab" class="tab-pane">
+                    <div id="comparisonResult"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Debug Info (collapsible) -->
+        <details class="card debug-info">
+            <summary>📊 Debug Info</summary>
+            <div id="debugPanel">
+                <p><small>Debug information will appear here</small></p>
+            </div>
+        </details>
+    </div>
+
+    <script src="app_enhanced.js"></script>
+
+</body>
+
+</html>

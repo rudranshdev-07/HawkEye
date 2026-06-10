@@ -1,0 +1,28 @@
+{
+  "name": "HawkEye - Geospatial Crime Intelligence",
+  "short_name": "HawkEye",
+  "description": "AI-powered geospatial crime intelligence platform with real-time risk assessment, forecasting, and route analysis",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0b1220",
+  "theme_color": "#38bdf8",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%23038bdf8' width='192' height='192'/><text x='50%' y='50%' font-size='120' fill='white' text-anchor='middle' dominant-baseline='central' font-weight='bold'>🛰</text></svg>",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "categories": ["productivity", "utilities"],
+  "screenshots": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 540 720'><rect fill='%230b1220' width='540' height='720'/><text x='270' y='360' font-size='60' fill='%2338bdf8' text-anchor='middle' dominant-baseline='central'>HawkEye</text></svg>",
+      "sizes": "540x720",
+      "type": "image/svg+xml",
+      "form_factor": "narrow"
+    }
+  ],
+  "prefer_related_applications": false
+}

@@ -310,3 +310,428 @@ Length: 1, dtype: str
 [2026-06-05 15:43:55] INFO [HawkEye.assess_risk:107] Risk assessment complete: assigned 1469 CRITICAL, 1467 HIGH, 1860 MEDIUM, 1085 LOW labels.
 [2026-06-05 15:43:56] INFO [HawkEye.main:86] Saved risk-assessed dataset to: data/processed/crime_risk_assessed.csv
 [2026-06-05 15:43:56] INFO [HawkEye.main:106] Saved machine learning report to: reports/ml\ml_evaluation_report.json
+[2026-06-05 17:55:16] INFO [HawkEye.main:39] Starting HawkEye Machine Learning Pipeline...
+[2026-06-05 17:55:16] INFO [HawkEye.main:48] Loading cleaned dataset from data/processed/crime_processed_data.csv
+[2026-06-05 17:55:16] INFO [HawkEye.prepare_data_splits:122] Preparing data splits. Splitting dataset with size=5881 into train/test (test_size=0.2).
+[2026-06-05 17:55:16] INFO [HawkEye.prepare_data_splits:147] Data split complete. Train features size: (4704, 10), Test features size: (1177, 10)
+[2026-06-05 17:55:16] INFO [HawkEye.main:60] Fitting preprocessing pipeline on training data...
+[2026-06-05 17:55:16] INFO [HawkEye.fit:41] Fitting CrimePreprocessor...
+[2026-06-05 17:55:16] INFO [HawkEye.fit:51] Fitting CrimeFeatureEngineer on training data...
+[2026-06-05 17:55:16] INFO [HawkEye.fit:92] Feature Engineering: Identified 12 DBSCAN clusters during fit.
+[2026-06-05 17:55:16] INFO [HawkEye.detect_crime_hotspots:71] Hotspot Detection: Identified and ranked the top 10 geospatial hotspots.
+[2026-06-05 17:55:16] INFO [HawkEye.fit:98] Feature Engineering: Identified 10 hotspots during fit.
+[2026-06-05 17:55:16] INFO [HawkEye.transform:109] Transforming 4704 rows using CrimeFeatureEngineer...
+[2026-06-05 17:55:16] INFO [HawkEye.fit:69] Dynamically detected 34 numerical features and 5 categorical features for ML.
+[2026-06-05 17:55:16] INFO [HawkEye.transform:109] Transforming 4704 rows using CrimeFeatureEngineer...
+[2026-06-05 17:55:16] INFO [HawkEye.transform:109] Transforming 1177 rows using CrimeFeatureEngineer...
+[2026-06-05 17:55:16] INFO [HawkEye.train_and_compare_models:27] Initializing models for comparison...
+[2026-06-05 17:55:16] INFO [HawkEye.train_and_compare_models:42] Training Random Forest classifier...
+[2026-06-05 17:55:17] INFO [HawkEye.train_and_compare_models:72] Random Forest Results: Acc: 0.8148 | Prec: 0.7605 | Rec: 0.5634 | F1: 0.6472
+[2026-06-05 17:55:17] INFO [HawkEye.train_and_compare_models:42] Training Gradient Boosting classifier...
+[2026-06-05 17:55:32] INFO [HawkEye.train_and_compare_models:72] Gradient Boosting Results: Acc: 0.8190 | Prec: 0.7630 | Rec: 0.5803 | F1: 0.6592
+[2026-06-05 17:55:32] INFO [HawkEye.train_and_compare_models:42] Training Decision Tree classifier...
+[2026-06-05 17:55:33] INFO [HawkEye.train_and_compare_models:72] Decision Tree Results: Acc: 0.7986 | Prec: 0.7305 | Rec: 0.5268 | F1: 0.6121
+[2026-06-05 17:55:33] INFO [HawkEye.train_and_compare_models:42] Training Logistic Regression classifier...
+[2026-06-05 17:55:33] INFO [HawkEye.train_and_compare_models:72] Logistic Regression Results: Acc: 0.8284 | Prec: 0.7703 | Rec: 0.6141 | F1: 0.6834
+[2026-06-05 17:55:33] INFO [HawkEye.train_and_compare_models:86] Model comparison complete. Best performer: Logistic Regression with F1-Score: 0.6834
+[2026-06-05 17:55:33] INFO [HawkEye.save_serialized_pipeline:105] Saving preprocessing pipeline to: models\preprocessing_pipeline.pkl
+[2026-06-05 17:55:33] INFO [HawkEye.save_serialized_pipeline:108] Saving best model to: models\best_model.pkl
+[2026-06-05 17:55:33] INFO [HawkEye.main:76] Instantiating Risk Intelligence Layer and predicting entire dataset...
+[2026-06-05 17:55:33] INFO [HawkEye.assess_risk:56] Assessing risk for 5881 records...
+[2026-06-05 17:55:33] INFO [HawkEye.transform:109] Transforming 5881 rows using CrimeFeatureEngineer...
+[2026-06-05 17:55:33] INFO [HawkEye.assess_risk:107] Risk assessment complete: assigned 1469 CRITICAL, 1467 HIGH, 1860 MEDIUM, 1085 LOW labels.
+[2026-06-05 17:55:33] INFO [HawkEye.main:86] Saved risk-assessed dataset to: data/processed/crime_risk_assessed.csv
+[2026-06-05 17:55:33] INFO [HawkEye.main:106] Saved machine learning report to: reports/ml\ml_evaluation_report.json
+[2026-06-05 19:07:42] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-05 19:07:42] ERROR [HawkEye.transform:114] Missing coordinate columns in dataset during transform.
+[2026-06-05 19:42:27] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-05 19:42:27] ERROR [HawkEye.transform:114] Missing coordinate columns in dataset during transform.
+[2026-06-05 19:48:35] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-05 19:48:35] ERROR [HawkEye.transform:114] Missing coordinate columns in dataset during transform.
+[2026-06-05 19:49:05] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-05 19:49:05] ERROR [HawkEye.transform:114] Missing coordinate columns in dataset during transform.
+[2026-06-05 19:49:06] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-05 19:49:06] ERROR [HawkEye.transform:114] Missing coordinate columns in dataset during transform.
+[2026-06-05 19:51:11] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-05 19:51:11] ERROR [HawkEye.transform:114] Missing coordinate columns in dataset during transform.
+[2026-06-05 19:51:22] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-05 19:51:22] ERROR [HawkEye.transform:114] Missing coordinate columns in dataset during transform.
+[2026-06-05 19:53:10] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-05 19:53:10] ERROR [HawkEye.transform:126] Missing 'date' column in dataset during transform.
+[2026-06-05 19:54:02] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-05 19:59:19] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-05 20:02:10] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-05 21:52:06] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-05 21:52:09] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-05 21:52:10] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-05 21:52:13] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-05 21:52:42] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-05 21:52:43] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-05 21:53:25] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-05 22:07:25] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-05 22:07:27] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-05 22:07:28] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-05 22:07:32] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-05 22:07:32] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-05 22:07:33] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-05 22:07:34] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-05 22:07:34] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-05 22:07:35] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-05 22:12:37] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-05 22:12:41] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-05 22:12:41] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-05 22:12:42] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-05 22:12:43] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-05 22:12:44] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-05 22:12:44] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-05 22:12:45] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-05 22:12:46] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-05 22:12:48] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-05 22:12:49] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-05 22:12:51] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-05 22:12:52] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-05 22:12:57] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-05 22:12:58] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-05 22:13:01] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-05 22:13:02] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-05 22:13:04] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-05 22:15:58] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-05 22:15:59] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-05 22:18:58] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-05 22:18:59] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-05 22:19:01] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-05 22:37:23] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-05 22:37:24] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-05 22:37:32] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-05 22:37:33] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-05 22:37:34] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-06 15:18:58] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-06 15:18:59] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-06 15:19:01] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-06 15:19:01] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-06 15:19:02] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-06 15:19:03] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-06 15:19:04] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-06 15:19:05] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-06 15:27:05] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-06 15:27:06] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-06 15:27:07] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-06 15:27:08] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-06 15:27:09] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-06 15:27:10] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-06 15:27:11] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-06 17:23:24] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-06 17:23:25] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-06 17:23:26] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-06 19:35:45] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-06 19:35:46] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-06 19:35:47] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-06 19:35:48] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-06 19:35:49] INFO [HawkEye.transform:109] Transforming 1 rows using CrimeFeatureEngineer...
+[2026-06-06 20:15:07] INFO [HawkEye.detect_crime_hotspots:71] Hotspot Detection: Identified and ranked the top 10 geospatial hotspots.
+[2026-06-06 20:15:10] INFO [HawkEye.detect_crime_hotspots:71] Hotspot Detection: Identified and ranked the top 10 geospatial hotspots.
+[2026-06-06 20:21:47] INFO [HawkEye.detect_crime_hotspots:71] Hotspot Detection: Identified and ranked the top 10 geospatial hotspots.
+[2026-06-06 20:22:32] INFO [HawkEye.detect_crime_hotspots:71] Hotspot Detection: Identified and ranked the top 10 geospatial hotspots.
+[2026-06-06 20:22:41] INFO [HawkEye.detect_crime_hotspots:71] Hotspot Detection: Identified and ranked the top 10 geospatial hotspots.
+[2026-06-06 20:22:45] INFO [HawkEye.detect_crime_hotspots:71] Hotspot Detection: Identified and ranked the top 10 geospatial hotspots.
+[2026-06-06 20:23:38] INFO [HawkEye.detect_crime_hotspots:71] Hotspot Detection: Identified and ranked the top 10 geospatial hotspots.
+[2026-06-06 20:26:11] INFO [HawkEye.detect_crime_hotspots:71] Hotspot Detection: Identified and ranked the top 10 geospatial hotspots.
+[2026-06-06 20:26:15] INFO [HawkEye.detect_crime_hotspots:71] Hotspot Detection: Identified and ranked the top 10 geospatial hotspots.
+[2026-06-06 20:28:45] INFO [HawkEye.detect_crime_hotspots:71] Hotspot Detection: Identified and ranked the top 10 geospatial hotspots.
+[2026-06-06 20:31:26] INFO [HawkEye.detect_crime_hotspots:71] Hotspot Detection: Identified and ranked the top 10 geospatial hotspots.
+[2026-06-06 20:31:44] INFO [HawkEye.detect_crime_hotspots:71] Hotspot Detection: Identified and ranked the top 10 geospatial hotspots.
+[2026-06-06 20:31:47] INFO [HawkEye.detect_crime_hotspots:71] Hotspot Detection: Identified and ranked the top 10 geospatial hotspots.
+[2026-06-06 20:37:42] INFO [HawkEye.detect_crime_hotspots:71] Hotspot Detection: Identified and ranked the top 10 geospatial hotspots.
+[2026-06-06 20:38:22] INFO [HawkEye.detect_crime_hotspots:71] Hotspot Detection: Identified and ranked the top 10 geospatial hotspots.
+[2026-06-06 21:09:47] INFO [HawkEye.detect_crime_hotspots:71] Hotspot Detection: Identified and ranked the top 10 geospatial hotspots.
+[2026-06-06 21:09:53] INFO [HawkEye.detect_crime_hotspots:71] Hotspot Detection: Identified and ranked the top 10 geospatial hotspots.
+[2026-06-06 21:36:52] INFO [HawkEye.detect_crime_hotspots:71] Hotspot Detection: Identified and ranked the top 10 geospatial hotspots.
+[2026-06-06 21:37:08] INFO [HawkEye.detect_crime_hotspots:71] Hotspot Detection: Identified and ranked the top 10 geospatial hotspots.
+[2026-06-06 21:37:12] INFO [HawkEye.detect_crime_hotspots:71] Hotspot Detection: Identified and ranked the top 10 geospatial hotspots.
+[2026-06-06 21:37:16] INFO [HawkEye.detect_crime_hotspots:71] Hotspot Detection: Identified and ranked the top 10 geospatial hotspots.
+[2026-06-06 21:37:17] INFO [HawkEye.detect_crime_hotspots:71] Hotspot Detection: Identified and ranked the top 10 geospatial hotspots.
+[2026-06-06 21:37:17] INFO [HawkEye.detect_crime_hotspots:71] Hotspot Detection: Identified and ranked the top 10 geospatial hotspots.
+[2026-06-06 21:37:19] INFO [HawkEye.detect_crime_hotspots:71] Hotspot Detection: Identified and ranked the top 10 geospatial hotspots.
+[2026-06-06 21:37:21] INFO [HawkEye.detect_crime_hotspots:71] Hotspot Detection: Identified and ranked the top 10 geospatial hotspots.
+[2026-06-06 21:37:22] INFO [HawkEye.detect_crime_hotspots:71] Hotspot Detection: Identified and ranked the top 10 geospatial hotspots.
+[2026-06-06 21:37:23] INFO [HawkEye.detect_crime_hotspots:71] Hotspot Detection: Identified and ranked the top 10 geospatial hotspots.
+[2026-06-06 21:37:24] INFO [HawkEye.detect_crime_hotspots:71] Hotspot Detection: Identified and ranked the top 10 geospatial hotspots.
+[2026-06-06 21:37:26] INFO [HawkEye.detect_crime_hotspots:71] Hotspot Detection: Identified and ranked the top 10 geospatial hotspots.
+[2026-06-06 21:37:27] INFO [HawkEye.detect_crime_hotspots:71] Hotspot Detection: Identified and ranked the top 10 geospatial hotspots.
+[2026-06-06 21:37:28] INFO [HawkEye.detect_crime_hotspots:71] Hotspot Detection: Identified and ranked the top 10 geospatial hotspots.
+[2026-06-06 21:37:29] INFO [HawkEye.detect_crime_hotspots:71] Hotspot Detection: Identified and ranked the top 10 geospatial hotspots.
+[2026-06-06 21:37:31] INFO [HawkEye.detect_crime_hotspots:71] Hotspot Detection: Identified and ranked the top 10 geospatial hotspots.
+[2026-06-06 21:43:33] INFO [HawkEye.detect_crime_hotspots:71] Hotspot Detection: Identified and ranked the top 10 geospatial hotspots.
+[2026-06-06 21:43:35] INFO [HawkEye.detect_crime_hotspots:71] Hotspot Detection: Identified and ranked the top 10 geospatial hotspots.
+[2026-06-06 21:43:36] INFO [HawkEye.detect_crime_hotspots:71] Hotspot Detection: Identified and ranked the top 10 geospatial hotspots.
+[2026-06-06 21:43:37] INFO [HawkEye.detect_crime_hotspots:71] Hotspot Detection: Identified and ranked the top 10 geospatial hotspots.
+[2026-06-06 21:43:40] INFO [HawkEye.detect_crime_hotspots:71] Hotspot Detection: Identified and ranked the top 10 geospatial hotspots.
+[2026-06-06 21:43:41] INFO [HawkEye.detect_crime_hotspots:71] Hotspot Detection: Identified and ranked the top 10 geospatial hotspots.
+[2026-06-06 21:43:57] INFO [HawkEye.detect_crime_hotspots:71] Hotspot Detection: Identified and ranked the top 10 geospatial hotspots.
+[2026-06-06 21:44:00] INFO [HawkEye.detect_crime_hotspots:71] Hotspot Detection: Identified and ranked the top 10 geospatial hotspots.
+[2026-06-06 21:44:03] INFO [HawkEye.detect_crime_hotspots:71] Hotspot Detection: Identified and ranked the top 10 geospatial hotspots.
+[2026-06-06 21:44:10] INFO [HawkEye.detect_crime_hotspots:71] Hotspot Detection: Identified and ranked the top 10 geospatial hotspots.
+[2026-06-06 21:44:13] INFO [HawkEye.detect_crime_hotspots:71] Hotspot Detection: Identified and ranked the top 10 geospatial hotspots.
+[2026-06-06 21:44:18] INFO [HawkEye.detect_crime_hotspots:71] Hotspot Detection: Identified and ranked the top 10 geospatial hotspots.
+[2026-06-06 21:44:20] INFO [HawkEye.detect_crime_hotspots:71] Hotspot Detection: Identified and ranked the top 10 geospatial hotspots.
+[2026-06-06 21:44:22] INFO [HawkEye.detect_crime_hotspots:71] Hotspot Detection: Identified and ranked the top 10 geospatial hotspots.
+[2026-06-06 21:44:23] INFO [HawkEye.detect_crime_hotspots:71] Hotspot Detection: Identified and ranked the top 10 geospatial hotspots.
+[2026-06-06 21:44:25] INFO [HawkEye.detect_crime_hotspots:71] Hotspot Detection: Identified and ranked the top 10 geospatial hotspots.
+[2026-06-06 21:47:10] INFO [HawkEye.detect_crime_hotspots:71] Hotspot Detection: Identified and ranked the top 10 geospatial hotspots.
+[2026-06-06 21:47:11] INFO [HawkEye.detect_crime_hotspots:71] Hotspot Detection: Identified and ranked the top 10 geospatial hotspots.
+[2026-06-06 21:47:27] INFO [HawkEye.detect_crime_hotspots:71] Hotspot Detection: Identified and ranked the top 10 geospatial hotspots.
+[2026-06-06 21:47:29] INFO [HawkEye.detect_crime_hotspots:71] Hotspot Detection: Identified and ranked the top 10 geospatial hotspots.
+[2026-06-06 21:47:30] INFO [HawkEye.detect_crime_hotspots:71] Hotspot Detection: Identified and ranked the top 10 geospatial hotspots.
+[2026-06-06 21:47:31] INFO [HawkEye.detect_crime_hotspots:71] Hotspot Detection: Identified and ranked the top 10 geospatial hotspots.
+[2026-06-06 21:47:32] INFO [HawkEye.detect_crime_hotspots:71] Hotspot Detection: Identified and ranked the top 10 geospatial hotspots.
+[2026-06-06 21:47:35] INFO [HawkEye.detect_crime_hotspots:71] Hotspot Detection: Identified and ranked the top 10 geospatial hotspots.
+[2026-06-06 21:47:36] INFO [HawkEye.detect_crime_hotspots:71] Hotspot Detection: Identified and ranked the top 10 geospatial hotspots.
+[2026-06-06 21:54:55] INFO [HawkEye.detect_crime_hotspots:71] Hotspot Detection: Identified and ranked the top 10 geospatial hotspots.
+[2026-06-06 21:55:12] INFO [HawkEye.detect_crime_hotspots:71] Hotspot Detection: Identified and ranked the top 10 geospatial hotspots.
+[2026-06-06 21:55:14] INFO [HawkEye.detect_crime_hotspots:71] Hotspot Detection: Identified and ranked the top 10 geospatial hotspots.
+[2026-06-06 21:55:18] INFO [HawkEye.detect_crime_hotspots:71] Hotspot Detection: Identified and ranked the top 10 geospatial hotspots.
+[2026-06-09 02:18:47] INFO [HawkEye.detect_crime_hotspots:71] Hotspot Detection: Identified and ranked the top 10 geospatial hotspots.
+[2026-06-09 02:18:53] INFO [HawkEye.detect_crime_hotspots:71] Hotspot Detection: Identified and ranked the top 10 geospatial hotspots.
+[2026-06-09 02:19:00] INFO [HawkEye.detect_crime_hotspots:71] Hotspot Detection: Identified and ranked the top 10 geospatial hotspots.
+[2026-06-09 02:19:32] INFO [HawkEye.detect_crime_hotspots:71] Hotspot Detection: Identified and ranked the top 10 geospatial hotspots.
+[2026-06-10 04:35:03] INFO [HawkEye.load_dataset:66] ✓ Successfully loaded Indian crime dataset: 250000 records
+[2026-06-10 04:35:03] WARNING [HawkEye.load_dataset:72] Missing expected columns: {'category'}
+[2026-06-10 04:35:14] INFO [HawkEye.load_dataset:66] ✓ Successfully loaded Indian crime dataset: 250000 records
+[2026-06-10 04:35:14] WARNING [HawkEye.load_dataset:72] Missing expected columns: {'category'}
+[2026-06-10 04:35:17] INFO [HawkEye.risk:144] Processing risk query for location: (28.61237397042636, 77.16136269172709)
+[2026-06-10 04:35:17] INFO [HawkEye.get_location_intelligence:89] Intelligence query: (28.6124, 77.1614)
+[2026-06-10 04:37:05] WARNING [HawkEye.get_location_intelligence:208] Hotspot detection error: 'category'
+[2026-06-10 04:37:05] INFO [HawkEye.get_location_intelligence:228] Risk assessment: score=56.97, level=Moderate
+[2026-06-10 04:37:05] INFO [HawkEye.risk:149] Risk analysis complete: score=56.97, level=Moderate
+[2026-06-10 04:37:05] INFO [HawkEye.risk:144] Processing risk query for location: (28.629435477178497, 77.18069730785244)
+[2026-06-10 04:37:05] INFO [HawkEye.get_location_intelligence:89] Intelligence query: (28.6294, 77.1807)
+[2026-06-10 04:39:05] INFO [HawkEye.load_dataset:66] ✓ Successfully loaded Indian crime dataset: 250000 records
+[2026-06-10 04:39:05] WARNING [HawkEye.load_dataset:72] Missing expected columns: {'category'}
+[2026-06-10 04:39:13] WARNING [HawkEye.get_location_intelligence:208] Hotspot detection error: 'category'
+[2026-06-10 04:39:13] INFO [HawkEye.get_location_intelligence:228] Risk assessment: score=56.94, level=Moderate
+[2026-06-10 04:39:13] INFO [HawkEye.risk:149] Risk analysis complete: score=56.94, level=Moderate
+[2026-06-10 04:39:13] INFO [HawkEye.risk:144] Processing risk query for location: (28.643519287590024, 77.22105281852942)
+[2026-06-10 04:39:13] INFO [HawkEye.get_location_intelligence:89] Intelligence query: (28.6435, 77.2211)
+[2026-06-10 04:39:38] INFO [HawkEye.load_dataset:66] ✓ Successfully loaded Indian crime dataset: 250000 records
+[2026-06-10 04:39:38] WARNING [HawkEye.load_dataset:72] Missing expected columns: {'category'}
+[2026-06-10 04:40:31] INFO [HawkEye.load_dataset:66] ✓ Successfully loaded Indian crime dataset: 250000 records
+[2026-06-10 04:40:31] WARNING [HawkEye.load_dataset:72] Missing expected columns: {'category'}
+[2026-06-10 04:41:22] WARNING [HawkEye.get_location_intelligence:208] Hotspot detection error: 'category'
+[2026-06-10 04:41:22] INFO [HawkEye.get_location_intelligence:228] Risk assessment: score=56.95, level=Moderate
+[2026-06-10 04:41:22] INFO [HawkEye.risk:149] Risk analysis complete: score=56.95, level=Moderate
+[2026-06-10 04:41:22] INFO [HawkEye.risk:144] Processing risk query for location: (41.87376017075368, -87.66798544804296)
+[2026-06-10 04:41:22] INFO [HawkEye.get_location_intelligence:89] Intelligence query: (41.8738, -87.6680)
+[2026-06-10 04:41:24] INFO [HawkEye.load_dataset:66] ✓ Successfully loaded Indian crime dataset: 250000 records
+[2026-06-10 04:41:24] WARNING [HawkEye.load_dataset:72] Missing expected columns: {'category'}
+[2026-06-10 04:43:35] WARNING [HawkEye.get_location_intelligence:208] Hotspot detection error: 'category'
+[2026-06-10 04:43:35] INFO [HawkEye.get_location_intelligence:228] Risk assessment: score=8.38, level=Very Safe
+[2026-06-10 04:43:35] INFO [HawkEye.risk:149] Risk analysis complete: score=8.38, level=Very Safe
+[2026-06-10 04:43:39] INFO [HawkEye.load_dataset:66] ✓ Successfully loaded Indian crime dataset: 250000 records
+[2026-06-10 04:43:39] WARNING [HawkEye.load_dataset:72] Missing expected columns: {'category'}
+[2026-06-10 04:43:39] INFO [HawkEye.risk:144] Processing risk query for location: (28.71838597299261, 77.38799548198948)
+[2026-06-10 04:43:39] INFO [HawkEye.get_location_intelligence:89] Intelligence query: (28.7184, 77.3880)
+[2026-06-10 04:43:57] INFO [HawkEye.load_dataset:66] ✓ Successfully loaded Indian crime dataset: 250000 records
+[2026-06-10 04:43:57] WARNING [HawkEye.load_dataset:72] Missing expected columns: {'category'}
+[2026-06-10 04:44:00] INFO [HawkEye.load_dataset:66] ✓ Successfully loaded Indian crime dataset: 250000 records
+[2026-06-10 04:44:00] WARNING [HawkEye.load_dataset:72] Missing expected columns: {'category'}
+[2026-06-10 04:44:46] INFO [HawkEye.get_location_intelligence:89] Intelligence query: (28.6100, 77.2000)
+[2026-06-10 04:47:14] INFO [HawkEye.get_location_intelligence:89] Intelligence query: (28.6100, 77.2000)
+[2026-06-10 04:47:14] WARNING [HawkEye.get_location_intelligence:207] Hotspot detection error: 'category'
+[2026-06-10 04:47:14] INFO [HawkEye.get_location_intelligence:227] Risk assessment: score=56.91, level=Moderate
+[2026-06-10 04:48:24] INFO [HawkEye.load_dataset:66] ✓ Successfully loaded Indian crime dataset: 250000 records
+[2026-06-10 04:48:24] WARNING [HawkEye.load_dataset:72] Missing expected columns: {'category'}
+[2026-06-10 04:48:24] INFO [HawkEye.risk:144] Processing risk query for location: (28.56626640315716, 77.34601156804536)
+[2026-06-10 04:48:24] INFO [HawkEye.get_location_intelligence:89] Intelligence query: (28.5663, 77.3460)
+[2026-06-10 04:48:24] WARNING [HawkEye.get_location_intelligence:207] Hotspot detection error: 'category'
+[2026-06-10 04:48:24] INFO [HawkEye.get_location_intelligence:227] Risk assessment: score=57.09, level=Moderate
+[2026-06-10 04:48:24] INFO [HawkEye.risk:149] Risk analysis complete: score=57.09, level=Moderate
+[2026-06-10 04:48:27] INFO [HawkEye.risk:144] Processing risk query for location: (28.980248416985088, 75.88416593503621)
+[2026-06-10 04:48:27] INFO [HawkEye.get_location_intelligence:89] Intelligence query: (28.9802, 75.8842)
+[2026-06-10 04:48:27] WARNING [HawkEye.get_location_intelligence:207] Hotspot detection error: 'category'
+[2026-06-10 04:48:27] INFO [HawkEye.get_location_intelligence:227] Risk assessment: score=8.38, level=Very Safe
+[2026-06-10 04:48:27] INFO [HawkEye.risk:149] Risk analysis complete: score=8.38, level=Very Safe
+[2026-06-10 04:48:28] INFO [HawkEye.risk:144] Processing risk query for location: (28.884120231277436, 76.13696630766184)
+[2026-06-10 04:48:28] INFO [HawkEye.get_location_intelligence:89] Intelligence query: (28.8841, 76.1370)
+[2026-06-10 04:48:28] WARNING [HawkEye.get_location_intelligence:207] Hotspot detection error: 'category'
+[2026-06-10 04:48:28] INFO [HawkEye.get_location_intelligence:227] Risk assessment: score=8.38, level=Very Safe
+[2026-06-10 04:48:28] INFO [HawkEye.risk:149] Risk analysis complete: score=8.38, level=Very Safe
+[2026-06-10 04:48:46] INFO [HawkEye.risk:144] Processing risk query for location: (28.50837113724893, 77.411959491339)
+[2026-06-10 04:48:46] INFO [HawkEye.get_location_intelligence:89] Intelligence query: (28.5084, 77.4120)
+[2026-06-10 04:48:46] WARNING [HawkEye.get_location_intelligence:207] Hotspot detection error: 'category'
+[2026-06-10 04:48:46] INFO [HawkEye.get_location_intelligence:227] Risk assessment: score=8.38, level=Very Safe
+[2026-06-10 04:48:46] INFO [HawkEye.risk:149] Risk analysis complete: score=8.38, level=Very Safe
+[2026-06-10 04:48:47] INFO [HawkEye.risk:144] Processing risk query for location: (28.778276375631542, 75.27964330484446)
+[2026-06-10 04:48:47] INFO [HawkEye.get_location_intelligence:89] Intelligence query: (28.7783, 75.2796)
+[2026-06-10 04:48:47] WARNING [HawkEye.get_location_intelligence:207] Hotspot detection error: 'category'
+[2026-06-10 04:48:47] INFO [HawkEye.get_location_intelligence:227] Risk assessment: score=8.38, level=Very Safe
+[2026-06-10 04:48:47] INFO [HawkEye.risk:149] Risk analysis complete: score=8.38, level=Very Safe
+[2026-06-10 04:48:48] INFO [HawkEye.risk:144] Processing risk query for location: (29.660181522646063, 75.67533084460631)
+[2026-06-10 04:48:48] INFO [HawkEye.get_location_intelligence:89] Intelligence query: (29.6602, 75.6753)
+[2026-06-10 04:48:48] WARNING [HawkEye.get_location_intelligence:207] Hotspot detection error: 'category'
+[2026-06-10 04:48:48] INFO [HawkEye.get_location_intelligence:227] Risk assessment: score=8.38, level=Very Safe
+[2026-06-10 04:48:48] INFO [HawkEye.risk:149] Risk analysis complete: score=8.38, level=Very Safe
+[2026-06-10 04:48:49] INFO [HawkEye.risk:144] Processing risk query for location: (28.759020480725177, 76.60959309126632)
+[2026-06-10 04:48:49] INFO [HawkEye.get_location_intelligence:89] Intelligence query: (28.7590, 76.6096)
+[2026-06-10 04:48:50] WARNING [HawkEye.get_location_intelligence:207] Hotspot detection error: 'category'
+[2026-06-10 04:48:50] INFO [HawkEye.get_location_intelligence:227] Risk assessment: score=8.38, level=Very Safe
+[2026-06-10 04:48:50] INFO [HawkEye.risk:149] Risk analysis complete: score=8.38, level=Very Safe
+[2026-06-10 04:48:51] INFO [HawkEye.risk:144] Processing risk query for location: (28.643410564911264, 77.26907232420278)
+[2026-06-10 04:48:51] INFO [HawkEye.get_location_intelligence:89] Intelligence query: (28.6434, 77.2691)
+[2026-06-10 04:48:51] WARNING [HawkEye.get_location_intelligence:207] Hotspot detection error: 'category'
+[2026-06-10 04:48:51] INFO [HawkEye.get_location_intelligence:227] Risk assessment: score=56.92, level=Moderate
+[2026-06-10 04:48:51] INFO [HawkEye.risk:149] Risk analysis complete: score=56.92, level=Moderate
+[2026-06-10 04:48:54] INFO [HawkEye.risk:144] Processing risk query for location: (28.797011748880305, 76.6194760937003)
+[2026-06-10 04:48:54] INFO [HawkEye.get_location_intelligence:89] Intelligence query: (28.7970, 76.6195)
+[2026-06-10 04:48:54] WARNING [HawkEye.get_location_intelligence:207] Hotspot detection error: 'category'
+[2026-06-10 04:48:54] INFO [HawkEye.get_location_intelligence:227] Risk assessment: score=8.38, level=Very Safe
+[2026-06-10 04:48:54] INFO [HawkEye.risk:149] Risk analysis complete: score=8.38, level=Very Safe
+[2026-06-10 04:48:55] INFO [HawkEye.risk:144] Processing risk query for location: (29.468596437424274, 77.22949438416656)
+[2026-06-10 04:48:55] INFO [HawkEye.get_location_intelligence:89] Intelligence query: (29.4686, 77.2295)
+[2026-06-10 04:48:55] WARNING [HawkEye.get_location_intelligence:207] Hotspot detection error: 'category'
+[2026-06-10 04:48:55] INFO [HawkEye.get_location_intelligence:227] Risk assessment: score=8.38, level=Very Safe
+[2026-06-10 04:48:55] INFO [HawkEye.risk:149] Risk analysis complete: score=8.38, level=Very Safe
+[2026-06-10 04:48:57] INFO [HawkEye.risk:144] Processing risk query for location: (28.609149067308827, 77.24598136498999)
+[2026-06-10 04:48:57] INFO [HawkEye.get_location_intelligence:89] Intelligence query: (28.6091, 77.2460)
+[2026-06-10 04:48:57] WARNING [HawkEye.get_location_intelligence:207] Hotspot detection error: 'category'
+[2026-06-10 04:48:57] INFO [HawkEye.get_location_intelligence:227] Risk assessment: score=56.91, level=Moderate
+[2026-06-10 04:48:57] INFO [HawkEye.risk:149] Risk analysis complete: score=56.91, level=Moderate
+[2026-06-10 04:48:58] INFO [HawkEye.risk:144] Processing risk query for location: (28.449925399625013, 76.9931809923643)
+[2026-06-10 04:48:58] INFO [HawkEye.get_location_intelligence:89] Intelligence query: (28.4499, 76.9932)
+[2026-06-10 04:48:58] WARNING [HawkEye.get_location_intelligence:207] Hotspot detection error: 'category'
+[2026-06-10 04:48:58] INFO [HawkEye.get_location_intelligence:227] Risk assessment: score=8.38, level=Very Safe
+[2026-06-10 04:48:58] INFO [HawkEye.risk:149] Risk analysis complete: score=8.38, level=Very Safe
+[2026-06-10 04:49:01] INFO [HawkEye.risk:144] Processing risk query for location: (30.34506217718464, 78.01636729578014)
+[2026-06-10 04:49:01] INFO [HawkEye.get_location_intelligence:89] Intelligence query: (30.3451, 78.0164)
+[2026-06-10 04:49:01] WARNING [HawkEye.get_location_intelligence:207] Hotspot detection error: 'category'
+[2026-06-10 04:49:01] INFO [HawkEye.get_location_intelligence:227] Risk assessment: score=8.38, level=Very Safe
+[2026-06-10 04:49:01] INFO [HawkEye.risk:149] Risk analysis complete: score=8.38, level=Very Safe
+[2026-06-10 04:49:02] INFO [HawkEye.risk:144] Processing risk query for location: (30.581746876128864, 76.543530342222)
+[2026-06-10 04:49:02] INFO [HawkEye.get_location_intelligence:89] Intelligence query: (30.5817, 76.5435)
+[2026-06-10 04:49:02] WARNING [HawkEye.get_location_intelligence:207] Hotspot detection error: 'category'
+[2026-06-10 04:49:02] INFO [HawkEye.get_location_intelligence:227] Risk assessment: score=8.38, level=Very Safe
+[2026-06-10 04:49:02] INFO [HawkEye.risk:149] Risk analysis complete: score=8.38, level=Very Safe
+[2026-06-10 04:49:03] INFO [HawkEye.risk:144] Processing risk query for location: (30.326102579681997, 74.7189711310978)
+[2026-06-10 04:49:03] INFO [HawkEye.get_location_intelligence:89] Intelligence query: (30.3261, 74.7190)
+[2026-06-10 04:49:03] WARNING [HawkEye.get_location_intelligence:207] Hotspot detection error: 'category'
+[2026-06-10 04:49:03] INFO [HawkEye.get_location_intelligence:227] Risk assessment: score=8.38, level=Very Safe
+[2026-06-10 04:49:03] INFO [HawkEye.risk:149] Risk analysis complete: score=8.38, level=Very Safe
+[2026-06-10 04:49:04] INFO [HawkEye.risk:144] Processing risk query for location: (28.614520948848096, 74.6420318872552)
+[2026-06-10 04:49:04] INFO [HawkEye.get_location_intelligence:89] Intelligence query: (28.6145, 74.6420)
+[2026-06-10 04:49:04] WARNING [HawkEye.get_location_intelligence:207] Hotspot detection error: 'category'
+[2026-06-10 04:49:04] INFO [HawkEye.get_location_intelligence:227] Risk assessment: score=8.38, level=Very Safe
+[2026-06-10 04:49:04] INFO [HawkEye.risk:149] Risk analysis complete: score=8.38, level=Very Safe
+[2026-06-10 04:49:05] INFO [HawkEye.risk:144] Processing risk query for location: (27.74316746672132, 79.13748199177213)
+[2026-06-10 04:49:05] INFO [HawkEye.get_location_intelligence:89] Intelligence query: (27.7432, 79.1375)
+[2026-06-10 04:49:05] WARNING [HawkEye.get_location_intelligence:207] Hotspot detection error: 'category'
+[2026-06-10 04:49:05] INFO [HawkEye.get_location_intelligence:227] Risk assessment: score=8.38, level=Very Safe
+[2026-06-10 04:49:05] INFO [HawkEye.risk:149] Risk analysis complete: score=8.38, level=Very Safe
+[2026-06-10 04:49:06] INFO [HawkEye.risk:144] Processing risk query for location: (26.38365885179791, 77.48878390943095)
+[2026-06-10 04:49:06] INFO [HawkEye.get_location_intelligence:89] Intelligence query: (26.3837, 77.4888)
+[2026-06-10 04:49:06] WARNING [HawkEye.get_location_intelligence:207] Hotspot detection error: 'category'
+[2026-06-10 04:49:06] INFO [HawkEye.get_location_intelligence:227] Risk assessment: score=8.38, level=Very Safe
+[2026-06-10 04:49:06] INFO [HawkEye.risk:149] Risk analysis complete: score=8.38, level=Very Safe
+[2026-06-10 04:49:07] INFO [HawkEye.risk:144] Processing risk query for location: (27.246272191903195, 78.08231521907379)
+[2026-06-10 04:49:07] INFO [HawkEye.get_location_intelligence:89] Intelligence query: (27.2463, 78.0823)
+[2026-06-10 04:49:07] WARNING [HawkEye.get_location_intelligence:207] Hotspot detection error: 'category'
+[2026-06-10 04:49:07] INFO [HawkEye.get_location_intelligence:227] Risk assessment: score=8.38, level=Very Safe
+[2026-06-10 04:49:07] INFO [HawkEye.risk:149] Risk analysis complete: score=8.38, level=Very Safe
+[2026-06-10 04:49:14] INFO [HawkEye.risk:144] Processing risk query for location: (18.970870608943535, 72.89529058658717)
+[2026-06-10 04:49:14] INFO [HawkEye.get_location_intelligence:89] Intelligence query: (18.9709, 72.8953)
+[2026-06-10 04:49:14] WARNING [HawkEye.get_location_intelligence:207] Hotspot detection error: 'category'
+[2026-06-10 04:49:14] INFO [HawkEye.get_location_intelligence:227] Risk assessment: score=57.01, level=Moderate
+[2026-06-10 04:49:14] INFO [HawkEye.risk:149] Risk analysis complete: score=57.01, level=Moderate
+[2026-06-10 04:49:15] INFO [HawkEye.risk:144] Processing risk query for location: (19.04356422304619, 72.89529058658717)
+[2026-06-10 04:49:15] INFO [HawkEye.get_location_intelligence:89] Intelligence query: (19.0436, 72.8953)
+[2026-06-10 04:49:15] WARNING [HawkEye.get_location_intelligence:207] Hotspot detection error: 'category'
+[2026-06-10 04:49:15] INFO [HawkEye.get_location_intelligence:227] Risk assessment: score=57.09, level=Moderate
+[2026-06-10 04:49:15] INFO [HawkEye.risk:149] Risk analysis complete: score=57.09, level=Moderate
+[2026-06-10 04:49:21] INFO [HawkEye.risk:144] Processing risk query for location: (17.39383763001476, 78.53193591467242)
+[2026-06-10 04:49:21] INFO [HawkEye.get_location_intelligence:89] Intelligence query: (17.3938, 78.5319)
+[2026-06-10 04:49:22] WARNING [HawkEye.get_location_intelligence:207] Hotspot detection error: 'category'
+[2026-06-10 04:49:22] INFO [HawkEye.get_location_intelligence:227] Risk assessment: score=8.38, level=Very Safe
+[2026-06-10 04:49:22] INFO [HawkEye.risk:149] Risk analysis complete: score=8.38, level=Very Safe
+[2026-06-10 04:49:22] INFO [HawkEye.risk:144] Processing risk query for location: (17.36239071836719, 78.50995327357455)
+[2026-06-10 04:49:22] INFO [HawkEye.get_location_intelligence:89] Intelligence query: (17.3624, 78.5100)
+[2026-06-10 04:49:23] WARNING [HawkEye.get_location_intelligence:207] Hotspot detection error: 'category'
+[2026-06-10 04:49:23] INFO [HawkEye.get_location_intelligence:227] Risk assessment: score=8.38, level=Very Safe
+[2026-06-10 04:49:23] INFO [HawkEye.risk:149] Risk analysis complete: score=8.38, level=Very Safe
+[2026-06-10 04:49:34] INFO [HawkEye.risk:144] Processing risk query for location: (30.714008870502873, 76.74166367269156)
+[2026-06-10 04:49:34] INFO [HawkEye.get_location_intelligence:89] Intelligence query: (30.7140, 76.7417)
+[2026-06-10 04:49:34] WARNING [HawkEye.get_location_intelligence:207] Hotspot detection error: 'category'
+[2026-06-10 04:49:34] INFO [HawkEye.get_location_intelligence:227] Risk assessment: score=8.38, level=Very Safe
+[2026-06-10 04:49:34] INFO [HawkEye.risk:149] Risk analysis complete: score=8.38, level=Very Safe
+[2026-06-10 04:49:36] INFO [HawkEye.risk:144] Processing risk query for location: (28.53732509183634, 77.2362730973939)
+[2026-06-10 04:49:36] INFO [HawkEye.get_location_intelligence:89] Intelligence query: (28.5373, 77.2363)
+[2026-06-10 04:49:36] WARNING [HawkEye.get_location_intelligence:207] Hotspot detection error: 'category'
+[2026-06-10 04:49:36] INFO [HawkEye.get_location_intelligence:227] Risk assessment: score=8.38, level=Very Safe
+[2026-06-10 04:49:36] INFO [HawkEye.risk:149] Risk analysis complete: score=8.38, level=Very Safe
+[2026-06-10 04:49:37] INFO [HawkEye.risk:144] Processing risk query for location: (28.59520444484433, 77.18131649464921)
+[2026-06-10 04:49:37] INFO [HawkEye.get_location_intelligence:89] Intelligence query: (28.5952, 77.1813)
+[2026-06-10 04:49:37] WARNING [HawkEye.get_location_intelligence:207] Hotspot detection error: 'category'
+[2026-06-10 04:49:37] INFO [HawkEye.get_location_intelligence:227] Risk assessment: score=56.93, level=Moderate
+[2026-06-10 04:49:37] INFO [HawkEye.risk:149] Risk analysis complete: score=56.93, level=Moderate
+[2026-06-10 04:49:40] INFO [HawkEye.risk:144] Processing risk query for location: (28.64022639596649, 77.19053675280499)
+[2026-06-10 04:49:40] INFO [HawkEye.get_location_intelligence:89] Intelligence query: (28.6402, 77.1905)
+[2026-06-10 04:49:40] WARNING [HawkEye.get_location_intelligence:207] Hotspot detection error: 'category'
+[2026-06-10 04:49:40] INFO [HawkEye.get_location_intelligence:227] Risk assessment: score=56.95, level=Moderate
+[2026-06-10 04:49:40] INFO [HawkEye.risk:149] Risk analysis complete: score=56.95, level=Moderate
+[2026-06-10 05:00:12] INFO [HawkEye.risk:144] Processing risk query for location: (28.928886061914998, 77.5624826957039)
+[2026-06-10 05:00:12] INFO [HawkEye.get_location_intelligence:89] Intelligence query: (28.9289, 77.5625)
+[2026-06-10 05:00:13] WARNING [HawkEye.get_location_intelligence:207] Hotspot detection error: 'category'
+[2026-06-10 05:00:13] INFO [HawkEye.get_location_intelligence:227] Risk assessment: score=8.38, level=Very Safe
+[2026-06-10 05:00:13] INFO [HawkEye.risk:149] Risk analysis complete: score=8.38, level=Very Safe
+[2026-06-10 05:00:15] INFO [HawkEye.risk:144] Processing risk query for location: (28.68225755690191, 77.33853453951924)
+[2026-06-10 05:00:15] INFO [HawkEye.get_location_intelligence:89] Intelligence query: (28.6823, 77.3385)
+[2026-06-10 05:00:15] WARNING [HawkEye.get_location_intelligence:207] Hotspot detection error: 'category'
+[2026-06-10 05:00:15] INFO [HawkEye.get_location_intelligence:227] Risk assessment: score=57.09, level=Moderate
+[2026-06-10 05:00:15] INFO [HawkEye.risk:149] Risk analysis complete: score=57.09, level=Moderate
+[2026-06-10 05:00:16] INFO [HawkEye.risk:144] Processing risk query for location: (28.58464858716435, 77.2588474655394)
+[2026-06-10 05:00:16] INFO [HawkEye.get_location_intelligence:89] Intelligence query: (28.5846, 77.2588)
+[2026-06-10 05:00:16] WARNING [HawkEye.get_location_intelligence:207] Hotspot detection error: 'category'
+[2026-06-10 05:00:16] INFO [HawkEye.get_location_intelligence:227] Risk assessment: score=56.94, level=Moderate
+[2026-06-10 05:00:16] INFO [HawkEye.risk:149] Risk analysis complete: score=56.94, level=Moderate
+[2026-06-10 05:00:17] INFO [HawkEye.risk:144] Processing risk query for location: (28.553298076411902, 76.99780360250205)
+[2026-06-10 05:00:17] INFO [HawkEye.get_location_intelligence:89] Intelligence query: (28.5533, 76.9978)
+[2026-06-10 05:00:17] WARNING [HawkEye.get_location_intelligence:207] Hotspot detection error: 'category'
+[2026-06-10 05:00:17] INFO [HawkEye.get_location_intelligence:227] Risk assessment: score=8.38, level=Very Safe
+[2026-06-10 05:00:17] INFO [HawkEye.risk:149] Risk analysis complete: score=8.38, level=Very Safe
+[2026-06-10 05:00:18] INFO [HawkEye.risk:144] Processing risk query for location: (28.723202152613275, 77.11183855319734)
+[2026-06-10 05:00:18] INFO [HawkEye.get_location_intelligence:89] Intelligence query: (28.7232, 77.1118)
+[2026-06-10 05:00:18] WARNING [HawkEye.get_location_intelligence:207] Hotspot detection error: 'category'
+[2026-06-10 05:00:18] INFO [HawkEye.get_location_intelligence:227] Risk assessment: score=56.89, level=Moderate
+[2026-06-10 05:00:18] INFO [HawkEye.risk:149] Risk analysis complete: score=56.89, level=Moderate
+[2026-06-10 05:00:19] INFO [HawkEye.risk:144] Processing risk query for location: (28.601525761563718, 77.19152562717713)
+[2026-06-10 05:00:19] INFO [HawkEye.get_location_intelligence:89] Intelligence query: (28.6015, 77.1915)
+[2026-06-10 05:00:19] WARNING [HawkEye.get_location_intelligence:207] Hotspot detection error: 'category'
+[2026-06-10 05:00:19] INFO [HawkEye.get_location_intelligence:227] Risk assessment: score=56.92, level=Moderate
+[2026-06-10 05:00:19] INFO [HawkEye.risk:149] Risk analysis complete: score=56.92, level=Moderate
+[2026-06-10 05:00:20] INFO [HawkEye.risk:144] Processing risk query for location: (28.603936565259442, 77.44432599980281)
+[2026-06-10 05:00:20] INFO [HawkEye.get_location_intelligence:89] Intelligence query: (28.6039, 77.4443)
+[2026-06-10 05:00:21] WARNING [HawkEye.get_location_intelligence:207] Hotspot detection error: 'category'
+[2026-06-10 05:00:21] INFO [HawkEye.get_location_intelligence:227] Risk assessment: score=8.38, level=Very Safe
+[2026-06-10 05:00:21] INFO [HawkEye.risk:149] Risk analysis complete: score=8.38, level=Very Safe
+[2026-06-10 05:00:23] INFO [HawkEye.risk:144] Processing risk query for location: (28.575003271070116, 77.37700416144052)
+[2026-06-10 05:00:23] INFO [HawkEye.get_location_intelligence:89] Intelligence query: (28.5750, 77.3770)
+[2026-06-10 05:00:23] WARNING [HawkEye.get_location_intelligence:207] Hotspot detection error: 'category'
+[2026-06-10 05:00:23] INFO [HawkEye.get_location_intelligence:227] Risk assessment: score=57.09, level=Moderate
+[2026-06-10 05:00:23] INFO [HawkEye.risk:149] Risk analysis complete: score=57.09, level=Moderate
+[2026-06-10 05:00:34] INFO [HawkEye.risk:144] Processing risk query for location: (28.50822805100724, 77.3234248436506)
+[2026-06-10 05:00:34] INFO [HawkEye.get_location_intelligence:89] Intelligence query: (28.5082, 77.3234)
+[2026-06-10 05:00:34] WARNING [HawkEye.get_location_intelligence:207] Hotspot detection error: 'category'
+[2026-06-10 05:00:34] INFO [HawkEye.get_location_intelligence:227] Risk assessment: score=57.05, level=Moderate
+[2026-06-10 05:00:34] INFO [HawkEye.risk:149] Risk analysis complete: score=57.05, level=Moderate
+[2026-06-10 05:01:22] INFO [HawkEye.risk:144] Processing risk query for location: (28.398765468644317, 77.31091988256802)
+[2026-06-10 05:01:22] INFO [HawkEye.get_location_intelligence:89] Intelligence query: (28.3988, 77.3109)
+[2026-06-10 05:01:22] WARNING [HawkEye.get_location_intelligence:207] Hotspot detection error: 'category'
+[2026-06-10 05:01:22] INFO [HawkEye.get_location_intelligence:227] Risk assessment: score=57.1, level=Moderate
+[2026-06-10 05:01:22] INFO [HawkEye.risk:149] Risk analysis complete: score=57.1, level=Moderate
+[2026-06-10 05:01:30] INFO [HawkEye.risk:144] Processing risk query for location: (28.410318328935077, 77.31170070157275)
+[2026-06-10 05:01:30] INFO [HawkEye.get_location_intelligence:89] Intelligence query: (28.4103, 77.3117)
+[2026-06-10 05:01:30] WARNING [HawkEye.get_location_intelligence:207] Hotspot detection error: 'category'
+[2026-06-10 05:01:30] INFO [HawkEye.get_location_intelligence:227] Risk assessment: score=57.1, level=Moderate
+[2026-06-10 05:01:30] INFO [HawkEye.risk:149] Risk analysis complete: score=57.1, level=Moderate
+[2026-06-10 05:01:41] INFO [HawkEye.risk:144] Processing risk query for location: (28.421075338910864, 77.34281350707593)
+[2026-06-10 05:01:41] INFO [HawkEye.get_location_intelligence:89] Intelligence query: (28.4211, 77.3428)
+[2026-06-10 05:01:42] WARNING [HawkEye.get_location_intelligence:207] Hotspot detection error: 'category'
+[2026-06-10 05:01:42] INFO [HawkEye.get_location_intelligence:227] Risk assessment: score=57.09, level=Moderate
+[2026-06-10 05:01:42] INFO [HawkEye.risk:149] Risk analysis complete: score=57.09, level=Moderate
