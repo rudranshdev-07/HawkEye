@@ -1,3 +1,4 @@
+
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 import pandas as pd
@@ -513,3 +514,6 @@ async def route_safety(
     except Exception as e:
         logger.error(f"Error in route-safety endpoint: {str(e)}", exc_info=True)
         raise HTTPException(status_code=500, detail="Failed to analyze route safety")
+=======
+
+>>>>>>> c624b83ddf7c692cf6889fa57777075a20aa4abf
